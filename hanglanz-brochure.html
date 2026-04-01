@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HanGlanz Global — Korean Beauty Intelligence Platform for Europe. Science-based ingredient benchmarking, education & personalized skincare routines.">
+<meta property="og:title" content="HanGlanz Global · Korean Beauty Intelligence">
+<meta property="og:description" content="Trusted K-Beauty education & ingredient benchmarking for German-speaking Europe.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<title>HanGlanz Global · Korean Beauty Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #F7F2EC;
+  --sand: #EDE5D8;
+  --warm-tan: #C9B49A;
+  --brown: #8B6F5E;
+  --deep: #3D2B22;
+  --green: #7A8C6E;
+  --rose: #C4918A;
+  --white: #FDFAF7;
+  --bar: linear-gradient(90deg, #7A8C6E 0%, #C9B49A 50%, #C4918A 100%);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #EDE5D8;
+  font-family: 'Jost', sans-serif;
+  color: var(--deep);
+  line-height: 1.6;
+}
+
+/* ── TOP ACCENT ── */
+.top-bar {
+  height: 5px;
+  background: var(--bar);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--cream);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--sand);
+  position: sticky;
+  top: 5px;
+  z-index: 99;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-circle {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--sand);
+  border: 1.5px solid var(--warm-tan);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--deep);
+  letter-spacing: 1px;
+}
+.nav-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--deep);
+  text-transform: uppercase;
+}
+.nav-tag {
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 2.5px;
+  color: var(--brown);
+  text-transform: uppercase;
+}
+.nav-ig {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--rose);
+  text-decoration: none;
+  border: 1px solid var(--rose);
+  padding: 5px 14px;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+.nav-ig:hover { background: var(--rose); color: white; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--cream);
+  padding: 72px 48px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 20% 80%, rgba(122,140,110,0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(196,145,138,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: var(--warm-tan);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: block;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 7vw, 64px);
+  font-weight: 300;
+  color: var(--deep);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.hero-title em { font-style: italic; color: var(--brown); }
+.hero-title-de {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 3.5vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--warm-tan);
+  margin-bottom: 32px;
+}
+.hero-divider {
+  width: 80px;
+  height: 1px;
+  background: var(--bar);
+  margin: 0 auto 32px;
+}
+.hero-sub {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--brown);
+  max-width: 480px;
+  margin: 0 auto 8px;
+}
+.hero-sub-de {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  color: var(--warm-tan);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── PILLARS ── */
+.pillars-section {
+  padding: 56px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-label {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 5px;
+  color: var(--warm-tan);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.pillar {
+  background: var(--cream);
+  padding: 28px 22px;
+  border-top: 3px solid var(--warm-tan);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pillar:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(61,43,34,0.1); }
+.pillar:nth-child(1) { border-top-color: var(--green); }
+.pillar:nth-child(2) { border-top-color: var(--warm-tan); }
+.pillar:nth-child(3) { border-top-color: var(--rose); }
+.pillar:nth-child(4) { border-top-color: var(--brown); }
+.pillar-icon { font-size: 24px; margin-bottom: 14px; display: block; }
+.pillar-en-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--deep);
+  display: block;
+  margin-bottom: 2px;
+}
+.pillar-de-label {
+  font-size: 8.5px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--warm-tan);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+.pillar-en { font-size: 12px; font-weight: 400; color: var(--deep); line-height: 1.65; margin-bottom: 6px; }
+.pillar-de { font-size: 11px; font-weight: 300; font-style: italic; color: var(--brown); line-height: 1.55; }
+
+/* ── MISSION BAND ── */
+.mission-band {
+  background: var(--deep);
+  padding: 56px 48px;
+  text-align: center;
+}
+.mission-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 4vw, 32px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--sand);
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 16px;
+}
+.mission-en strong { font-style: normal; font-weight: 500; color: white; }
+.mission-de {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(14px, 2.5vw, 20px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--warm-tan);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── TWO COL ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 32px;
+  gap: 40px;
+}
+@media (max-width: 680px) { .two-col { grid-template-columns: 1fr; padding: 40px 20px; } }
+
+.col-heading-en {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--rose);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.col-heading-de {
+  font-size: 8px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: var(--warm-tan);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* offers list */
+.offer-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--sand);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.offer-item:last-child { border-bottom: none; }
+.offer-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--warm-tan);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.offer-en { font-size: 12px; font-weight: 400; color: var(--deep); line-height: 1.55; display: block; }
+.offer-de { font-size: 10.5px; font-weight: 300; font-style: italic; color: var(--brown); display: block; }
+
+/* serve block */
+.serve-block {
+  background: var(--sand);
+  padding: 28px 24px;
+  height: fit-content;
+}
+.serve-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+.serve-item:last-child { margin-bottom: 0; }
+.serve-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--warm-tan);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 30px;
+}
+.serve-en { font-size: 12px; font-weight: 500; color: var(--deep); line-height: 1.4; display: block; }
+.serve-de { font-size: 10.5px; font-weight: 300; font-style: italic; color: var(--brown); display: block; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--cream);
+  border-top: 1px solid var(--sand);
+  padding: 40px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--deep);
+}
+.footer-right { text-align: right; }
+.footer-right span {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--brown);
+  text-transform: uppercase;
+  line-height: 2.2;
+}
+.footer-right a { color: var(--rose); text-decoration: none; }
+
+.bottom-bar { height: 4px; background: var(--bar); }
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  nav { padding: 14px 20px; }
+  .hero { padding: 48px 24px 40px; }
+  .pillars-section { padding: 40px 20px; }
+  .mission-band { padding: 40px 24px; }
+  footer { flex-direction: column; text-align: center; }
+  .footer-right { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<nav>
+  <div class="nav-logo">
+    <div class="nav-circle">HG</div>
+    <div>
+      <div class="nav-name">HanGlanz Global</div>
+      <div class="nav-tag">Korean Beauty Intelligence · @hanglanzglobal</div>
+    </div>
+  </div>
+  <a class="nav-ig" href="https://www.instagram.com/hanglanzglobal/" target="_blank">@hanglanzglobal ↗</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-eyebrow">Korean Beauty · Science · Transparency · Europe</span>
+  <h1 class="hero-title">Where <em>Korean Beauty Science</em><br>meets European Intelligence.</h1>
+  <p class="hero-title-de">Wo koreanische Schönheitswissenschaft auf europäische Intelligenz trifft.</p>
+  <div class="hero-divider"></div>
+  <p class="hero-sub">Trusted K-beauty education, ingredient benchmarking & personalized skincare routines for the German-speaking market.</p>
+  <p class="hero-sub-de">Vertrauensvolle K-Beauty-Bildung, Inhaltsstoff-Benchmarking & personalisierte Routinen für den deutschsprachigen Markt.</p>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars-section">
+  <div class="section-label">Our Four Pillars · Unsere Vier Säulen</div>
+  <div class="pillars-grid">
+    <div class="pillar">
+      <span class="pillar-icon">🔬</span>
+      <span class="pillar-en-label">Vision</span>
+      <span class="pillar-de-label">Unsere Vision</span>
+      <p class="pillar-en">Trusted Korean skincare education for the European market — science first, hype never.</p>
+      <p class="pillar-de">Vertrauensvolle K-Beauty-Bildung für den europäischen Markt — zuerst Wissenschaft, nie Hype.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">📊</span>
+      <span class="pillar-en-label">Mission</span>
+      <span class="pillar-de-label">Unsere Mission</span>
+      <p class="pillar-en">Science-based ingredient benchmarking & product intelligence to help you make smarter skincare choices.</p>
+      <p class="pillar-de">Wissenschaftliches Inhaltsstoff-Benchmarking für klügere Hautpflegeentscheidungen.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">🌿</span>
+      <span class="pillar-en-label">Approach</span>
+      <span class="pillar-de-label">Unser Ansatz</span>
+      <p class="pillar-en">Transparent product comparison scored 0–100, modelled on Korea's Hwahae platform — built for European consumers.</p>
+      <p class="pillar-de">Transparenter Produktvergleich von 0–100, inspiriert von Koreas Hwahae-Plattform — für Europa.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">🤍</span>
+      <span class="pillar-en-label">Promise</span>
+      <span class="pillar-de-label">Unser Versprechen</span>
+      <p class="pillar-en">No spam. No hype. Just honest, personalized routines for your skin type — always backed by data.</p>
+      <p class="pillar-de">Kein Spam. Kein Hype. Nur ehrliche, personalisierte Routinen für Ihren Hauttyp — stets datenbasiert.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION BAND -->
+<section class="mission-band">
+  <p class="mission-en">We decode <strong>Korean beauty ingredients</strong> so European consumers can make <strong>informed, confident decisions</strong> — without the noise.</p>
+  <p class="mission-de">Wir entschlüsseln koreanische Schönheitsinhaltsstoffe, damit europäische Verbraucher fundierte Entscheidungen treffen können — ohne das Rauschen.</p>
+</section>
+
+<!-- TWO COL -->
+<div class="two-col">
+  <div>
+    <div class="col-heading-en">What We Offer</div>
+    <div class="col-heading-de">Was Wir Bieten · Our Services</div>
+    <div class="offer-item"><span class="offer-dot"></span><div>
+      <span class="offer-en">Ingredient Benchmarking Platform (0–100 Score)</span>
+      <span class="offer-de">Inhaltsstoff-Benchmarking-Plattform (0–100 Bewertung)</span>
+    </div></div>
+    <div class="offer-item"><span class="offer-dot"></span><div>
+      <span class="offer-en">Science-based product comparisons across Korean brands</span>
+      <span class="offer-de">Wissenschaftliche Produktvergleiche koreanischer Marken</span>
+    </div></div>
+    <div class="offer-item"><span class="offer-dot"></span><div>
+      <span class="offer-en">Personalized skincare routine guidance</span>
+      <span class="offer-de">Persönliche Hautpflegeroutine-Empfehlungen</span>
+    </div></div>
+    <div class="offer-item"><span class="offer-dot"></span><div>
+      <span class="offer-en">K-beauty education content in German & English</span>
+      <span class="offer-de">K-Beauty-Bildungsinhalte auf Deutsch & Englisch</span>
+    </div></div>
+    <div class="offer-item"><span class="offer-dot"></span><div>
+      <span class="offer-en">Market intelligence for the DACH beauty consumer</span>
+      <span class="offer-de">Marktintelligenz für den DACH-Beauty-Konsumenten</span>
+    </div></div>
+  </div>
+
+  <div>
+    <div class="col-heading-en">Who We Serve</div>
+    <div class="col-heading-de">Für Wen Wir Da Sind</div>
+    <div class="serve-block">
+      <div class="serve-item"><span class="serve-num">01</span><div>
+        <span class="serve-en">Skincare-curious consumers in DACH</span>
+        <span class="serve-de">Hautpflegebewusste Verbraucher im DACH-Raum</span>
+      </div></div>
+      <div class="serve-item"><span class="serve-num">02</span><div>
+        <span class="serve-en">K-beauty enthusiasts & beginners</span>
+        <span class="serve-de">K-Beauty-Begeisterte & Einsteiger</span>
+      </div></div>
+      <div class="serve-item"><span class="serve-num">03</span><div>
+        <span class="serve-en">Ingredient-conscious shoppers</span>
+        <span class="serve-de">Inhaltsstoffbewusste Käufer</span>
+      </div></div>
+      <div class="serve-item"><span class="serve-num">04</span><div>
+        <span class="serve-en">Brands seeking European market insight</span>
+        <span class="serve-de">Marken mit europäischem Marktfokus</span>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-tagline">Learn. Glow. Thrive.</div>
+  <div class="footer-right">
+    <span><a href="https://www.instagram.com/hanglanzglobal/">@hanglanzglobal</a> · Instagram</span>
+    <span>Düsseldorf, Germany 🇩🇪</span>
+    <span>Korean Beauty Intelligence Platform</span>
+    <span>© 2026 HanGlanz Global</span>
+  </div>
+</footer>
+<div class="bottom-bar"></div>
+
+</body>
+</html>
