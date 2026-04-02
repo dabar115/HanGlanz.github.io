@@ -260,8 +260,8 @@ footer{background:var(--ink);padding:48px 40px 36px}
     </div>
   </div>
   <div class="nav-links">
-    <a class="nav-link" href="mailto:hanglanzglobal@gmail.com">hanglanzglobal@gmail.com</a>
-    <a class="nav-link" href="https://illustrious-hamster-9e2.notion.site" target="_blank">Notion &uarr;</a>
+    <a class="nav-link" id="nav-email-link">hanglanzglobal@gmail.com</a>
+    <a class="nav-link" href="https://illustrious-hamster-9e2.notion.site/Atomy-HanGlanz-Top-21-Products-Germany-Edition-3306071c541881449c6bf7166f46676c" target="_blank">Notion &uarr;</a>
     <a class="nav-link accent" href="https://www.instagram.com/hanglanzglobal/" target="_blank">@hanglanzglobal &uarr;</a>
   </div>
 </nav>
@@ -560,8 +560,8 @@ footer{background:var(--ink);padding:48px 40px 36px}
     </div>
     <div class="fr">
       <a href="https://www.instagram.com/hanglanzglobal/" target="_blank" class="acc">@hanglanzglobal &uarr;</a>
-      <a href="mailto:hanglanzglobal@gmail.com">hanglanzglobal@gmail.com</a>
-      <a href="https://illustrious-hamster-9e2.notion.site" target="_blank">Notion Catalogue &uarr;</a>
+      <a id="footer-email-link">hanglanzglobal@gmail.com</a>
+      <a href="https://illustrious-hamster-9e2.notion.site/Atomy-HanGlanz-Top-21-Products-Germany-Edition-3306071c541881449c6bf7166f46676c" target="_blank">Notion Catalogue &uarr;</a>
       <span>&copy; 2025 HanGlanz Global &middot; D&uuml;sseldorf</span>
       <span>HanGlanz Benchmark Approved&trade;</span>
     </div>
@@ -603,13 +603,4 @@ function submitTrust(){
   var duration=document.getElementById('f-duration').value;
   var skinType=[...document.querySelectorAll('.sp.sel')].map(function(p){return p.dataset.val}).join(', ');
   if(!name||!product||!review||rating===0){alert('Please fill in: Name, Product, Rating & Review.\nBitte ausf\u00fcllen: Name, Produkt, Bewertung & Erfahrung.');return}
-  var entry={name:name,email:document.getElementById('f-email').value.trim(),product:product,duration:duration,review:review,skinType:skinType,rating:rating,date:new Date().toLocaleDateString('de-DE',{year:'numeric',month:'short',day:'numeric'})};
-  var reviews=loadR();reviews.push(entry);saveR(reviews);
-  document.getElementById('trust-form-wrap').style.display='none';
-  document.getElementById('form-success').style.display='block';
-  renderR();
-}
-renderR();
-</script>
-</body>
-</html>
+  var entry={name:name,email:document.getElementById('f-email').value.trim(),product:produc
