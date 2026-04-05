@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- GSAP Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
@@ -29,6 +35,75 @@
   --r2:14px;
 }
 html{scroll-behavior:smooth}
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* HERO ANIMATION */
+
+gsap.from(".hero-eyebrow", {
+  opacity:0,
+  y:20,
+  duration:1,
+  delay:0.2
+})
+
+gsap.from(".hero-h1", {
+  opacity:0,
+  y:30,
+  duration:1.2,
+  delay:0.4
+})
+
+gsap.from(".hero-tagline", {
+  opacity:0,
+  y:30,
+  duration:1,
+  delay:0.6
+})
+
+gsap.from(".hero-body", {
+  opacity:0,
+  y:30,
+  duration:1,
+  delay:0.8
+})
+
+gsap.from(".hero-actions", {
+  opacity:0,
+  y:30,
+  duration:1,
+  delay:1
+})
+
+
+/* PRODUCT CARDS */
+
+gsap.utils.toArray(".pc").forEach(card => {
+
+gsap.from(card,{
+  scrollTrigger:{
+    trigger:card,
+    start:"top 85%"
+  },
+  opacity:0,
+  y:40,
+  duration:0.8
+})
+
+})
+
+
+/* PARALLAX HERO IMAGE */
+
+gsap.to(".hero-face",{
+  scrollTrigger:{
+    trigger:".hero",
+    start:"top top",
+    scrub:true
+  },
+  scale:1.08
+})
+</script>
 body{font-family:'Jost',sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* ── GRAIN ── */
@@ -140,6 +215,54 @@ section{position:relative;z-index:10}
 .pc-link:hover .pc-link-arrow{transform:translateX(3px)}
 
 /* ── ANALYSES ── */
+<script>
+
+const ctx = document.getElementById('ingredientChart');
+
+new Chart(ctx, {
+type: 'radar',
+data: {
+
+labels: [
+"Barrier Repair",
+"INCI Transparency",
+"Clean Beauty",
+"Clinical Evidence",
+"Skin Compatibility"
+],
+
+datasets: [{
+label: "Absolute CellActive",
+data: [94,91,96,92,93],
+borderWidth:2
+}]
+
+},
+
+options:{
+responsive:true,
+plugins:{
+legend:{
+labels:{
+font:{
+size:14
+}
+}
+}
+},
+
+scales:{
+r:{
+beginAtZero:true,
+max:100
+}
+}
+}
+
+});
+
+</script>
+  
 .analyses{padding:110px 0;background:var(--cream)}
 .an-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start;margin-bottom:5rem}
 .an-visual{position:relative}
