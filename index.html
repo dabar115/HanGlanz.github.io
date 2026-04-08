@@ -1,451 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- GSAP Animations -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
 <title>HanGlanz Global — K-Beauty Ingredient Intelligence</title>
+<meta name="description" content="HanGlanz Global analyses Korean beauty and wellness products with scientific ingredient scoring for the DACH market."/>
+<meta property="og:title" content="HanGlanz Global — K-Beauty Ingredient Intelligence"/>
+<meta property="og:description" content="Independent ingredient analysis of Korean skincare and wellness for German-speaking Europe."/>
+<meta property="og:image" content="https://dabar115.github.io/HanGlanz.github.io/images/hero.jpg"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#0c0b09;
-  --ink2:#1e1d1a;
-  --mid:#6a6460;
-  --muted:#9a948e;
-  --white:#ffffff;
-  --cream:#faf8f4;
-  --warm:#f3ede4;
-  --border:#e6e0d8;
-  --gold:#b5915a;
-  --gold2:#c9a87a;
-  --goldpale:#e8d8be;
-  --goldlight:#f6f0e6;
-  --accent:#c47b5a;
-  --sage:#6d9a7e;
-  --sky:#5d8fa8;
-  --r:8px;
-  --r2:14px;
+  --ink:#0c0b09;--ink2:#1e1d1a;--mid:#6a6460;--muted:#9a948e;
+  --white:#fff;--cream:#faf8f4;--warm:#f3ede4;--border:#e6e0d8;
+  --gold:#b5915a;--gold2:#c9a87a;--goldpale:#e8d8be;--goldlight:#f6f0e6;
+  --sage:#6d9a7e;--sky:#5d8fa8;--rose:#c47b7a;--r:8px;--r2:14px;--nav:60px;
 }
 html{scroll-behavior:smooth}
-<script>
-gsap.registerPlugin(ScrollTrigger);
+body{font-family:'Jost',sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+body::after{content:'';position:fixed;inset:0;z-index:999;pointer-events:none;opacity:0.02;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
 
-/* HERO ANIMATION */
-
-gsap.from(".hero-eyebrow", {
-  opacity:0,
-  y:20,
-  duration:1,
-  delay:0.2
-})
-
-gsap.from(".hero-h1", {
-  opacity:0,
-  y:30,
-  duration:1.2,
-  delay:0.4
-})
-
-gsap.from(".hero-tagline", {
-  opacity:0,
-  y:30,
-  duration:1,
-  delay:0.6
-})
-
-gsap.from(".hero-body", {
-  opacity:0,
-  y:30,
-  duration:1,
-  delay:0.8
-})
-
-gsap.from(".hero-actions", {
-  opacity:0,
-  y:30,
-  duration:1,
-  delay:1
-})
-
-
-/* PRODUCT CARDS */
-
-gsap.utils.toArray(".pc").forEach(card => {
-
-gsap.from(card,{
-  scrollTrigger:{
-    trigger:card,
-    start:"top 85%"
-  },
-  opacity:0,
-  y:40,
-  duration:0.8
-})
-
-})
-
-
-/* PARALLAX HERO IMAGE */
-
-gsap.to(".hero-face",{
-  scrollTrigger:{
-    trigger:".hero",
-    start:"top top",
-    scrub:true
-  },
-  scale:1.08
-})
-</script>
-body{font-family:'Jost',sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-
-/* ── GRAIN ── */
-body::after{content:'';position:fixed;inset:0;z-index:1000;pointer-events:none;opacity:0.018;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");background-size:300px}
-
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:rgba(250,248,244,0.94);backdrop-filter:blur(20px) saturate(1.3);border-bottom:1px solid var(--border)}
-.nav-brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none;flex-shrink:0}
-.nav-mark{width:30px;height:30px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;border-radius:3px}
-.nav-mark span{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--gold);line-height:1}
-.nav-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink)}
-.nav-links{display:flex;gap:0;list-style:none}
-.nav-links a{padding:0.35rem 1.1rem;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:1.1rem;right:1.1rem;height:1.5px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s}
+nav{position:fixed;top:0;left:0;right:0;z-index:800;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(250,248,244,0.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.nav-brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none}
+.nav-mark{width:28px;height:28px;border:1.5px solid var(--gold);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-mark span{font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--gold);line-height:1}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink)}
+.nav-links{display:flex;list-style:none}
+.nav-links a{padding:0.3rem 1rem;font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-1px;left:1rem;right:1rem;height:1.5px;background:var(--gold);transform:scaleX(0);transition:transform .25s}
 .nav-links a:hover{color:var(--ink)}
 .nav-links a:hover::after{transform:scaleX(1)}
-.nav-right{display:flex;align-items:center;gap:0.8rem;flex-shrink:0}
-.nav-ig{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s}
+.nav-r{display:flex;align-items:center;gap:0.8rem}
+.nav-ig{font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s}
 .nav-ig:hover{color:var(--ink)}
-.nav-btn{padding:0.45rem 1.3rem;background:var(--ink);color:var(--white);font-size:0.68rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background 0.2s}
-.nav-btn:hover{background:var(--ink2)}
-
+.nav-cta{padding:0.42rem 1.2rem;background:var(--ink);color:var(--white);font-size:0.66rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:background .2s}
+.nav-cta:hover{background:var(--ink2)}
 main{position:relative;z-index:10}
+.btn-dark{display:inline-block;padding:.8rem 2.2rem;background:var(--ink);color:var(--white);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--ink);border-radius:2px;transition:background .2s}
+.btn-dark:hover{background:var(--ink2)}
+.btn-line{display:inline-block;padding:.8rem 2.2rem;background:transparent;color:var(--ink);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--border);border-radius:2px;transition:border-color .2s,color .2s}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{display:inline-block;padding:.8rem 2.2rem;background:var(--gold);color:var(--white);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--gold);border-radius:2px;transition:background .2s}
+.btn-gold:hover{background:#9e7d48}
+.btn-ghost{display:inline-block;padding:.8rem 2.2rem;background:transparent;color:rgba(255,255,255,.5);font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(255,255,255,.14);border-radius:2px;transition:all .2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.35);color:var(--white)}
+section{position:relative;z-index:10}
+.si{max-width:1160px;margin:0 auto;padding:0 5vw}
+.lbl{font-size:.62rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.6rem;margin-bottom:.9rem}
+.lbl::before{content:'';width:16px;height:1px;background:var(--goldpale)}
+.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:1.1rem}
+.h2 em{font-style:italic;color:var(--gold)}
+.body-t{font-size:.88rem;font-weight:300;line-height:2;color:var(--mid);max-width:500px}
 
-/* ── HERO ── */
-.hero{min-height:100svh;padding-top:62px;display:grid;grid-template-columns:5fr 4fr;overflow:hidden}
-.hero-l{display:flex;flex-direction:column;justify-content:center;padding:10vh 5vw 10vh 4vw}
-.hero-r{position:relative;overflow:hidden;background:#f0e8dc}
-
-/* Brand face — consistent editorial image */
-.hero-face{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:sepia(8%) brightness(0.97)}
-.hero-r-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(250,248,244,0.25) 0%,transparent 25%)}
-.hero-r-badge{position:absolute;bottom:2.5rem;left:2.5rem;background:rgba(12,11,9,0.88);backdrop-filter:blur(12px);border:1px solid rgba(181,145,90,0.3);padding:1.2rem 1.5rem;border-radius:var(--r)}
-.hrb-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
-.hrb-score{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;color:var(--white);line-height:1}
-.hrb-sub{font-size:0.65rem;color:rgba(255,255,255,0.38);letter-spacing:0.08em;text-transform:uppercase;margin-top:0.3rem}
-
-.hero-eyebrow{font-size:0.66rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.8rem;margin-bottom:2rem}
-.hero-eyebrow::before{content:'';width:22px;height:1px;background:var(--goldpale)}
-.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:400;line-height:1.06;color:var(--ink);margin-bottom:0.5rem}
+/* HERO */
+.hero{min-height:100vh;padding-top:var(--nav);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:8vh 5vw}
+.hero-r{position:relative;overflow:hidden;background:linear-gradient(155deg,#f5ede0 0%,#ede5f0 50%,#dde8f2 100%)}
+.hero-r-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.hero-r-art::before{content:'';position:absolute;top:-10%;left:10%;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(181,145,90,.16),transparent 68%)}
+.hero-r-art::after{content:'';position:absolute;bottom:0;right:-8%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(109,154,126,.12),transparent 68%)}
+.hero-r-circle{width:240px;height:240px;border-radius:50%;border:1px solid rgba(181,145,90,.2);display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+.hero-r-circle::before{content:'';position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(181,145,90,.1)}
+.hero-r-glyph{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;background:linear-gradient(135deg,rgba(181,145,90,.6),rgba(181,145,90,.2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-r-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(250,248,244,.22) 0%,transparent 28%)}
+.hero-badge{position:absolute;bottom:2.2rem;left:1.8rem;right:1.8rem;background:rgba(12,11,9,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(181,145,90,.28);padding:1.1rem 1.4rem;border-radius:var(--r)}
+.hb-lbl{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.hb-score{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--white);line-height:1}
+.hb-sub{font-size:.6rem;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-top:.25rem}
+.hero-eye{font-size:.64rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.7rem;margin-bottom:1.8rem}
+.hero-eye::before{content:'';width:20px;height:1px;background:var(--goldpale)}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5vw,4.8rem);font-weight:400;line-height:1.06;color:var(--ink);margin-bottom:.4rem}
 .hero-h1 em{font-style:italic;color:var(--gold)}
-.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.6vw,1.3rem);font-style:italic;font-weight:300;color:var(--muted);margin-bottom:2.4rem}
-.hero-body{font-size:0.9rem;font-weight:300;line-height:2;color:var(--mid);max-width:440px;margin-bottom:3rem}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-solid{display:inline-block;padding:0.8rem 2.2rem;background:var(--ink);color:var(--white);font-size:0.7rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:1.5px solid var(--ink);transition:background 0.2s}
-.btn-solid:hover{background:var(--ink2)}
-.btn-outline{display:inline-block;padding:0.8rem 2.2rem;background:transparent;color:var(--ink);font-size:0.7rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border:1.5px solid var(--border);border-radius:2px;transition:border-color 0.2s,color 0.2s}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
-.btn-gold{display:inline-block;padding:0.8rem 2.2rem;background:var(--gold);color:var(--white);font-size:0.7rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border-radius:2px;border:1.5px solid var(--gold);transition:background 0.2s}
-.btn-gold:hover{background:#a07840}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(.95rem,1.5vw,1.22rem);font-style:italic;font-weight:300;color:var(--muted);margin-bottom:2.2rem}
+.hero-body{font-size:.88rem;font-weight:300;line-height:2;color:var(--mid);max-width:420px;margin-bottom:2.8rem}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
 
-/* ── TICKER ── */
-.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--cream);padding:0.75rem 0;overflow:hidden}
-.ticker-track{display:flex;width:max-content;animation:tick 35s linear infinite}
-.ticker-track:hover{animation-play-state:paused}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ti{display:flex;align-items:center;gap:2rem;padding:0 2.5rem;font-size:0.67rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+/* TICKER */
+.ticker{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--cream);padding:.7rem 0}
+.ticker-inner{display:flex;width:max-content;animation:scroll 32s linear infinite}
+.ticker-inner:hover{animation-play-state:paused}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ti{display:flex;align-items:center;gap:2rem;padding:0 2.4rem;font-size:.64rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 .ti strong{color:var(--gold);font-weight:600}
 .ti-dot{width:3px;height:3px;border-radius:50%;background:var(--goldpale);flex-shrink:0}
 
-/* ── SHARED SECTION ── */
-section{position:relative;z-index:10}
-.si{max-width:1180px;margin:0 auto;padding:0 4vw}
-.sl{font-size:0.63rem;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.6rem;margin-bottom:0.9rem}
-.sl::before{content:'';width:18px;height:1px;background:var(--goldpale)}
-.st{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:1.2rem}
-.st em{font-style:italic;color:var(--gold)}
-.sb{font-size:0.88rem;font-weight:300;line-height:2;color:var(--mid);max-width:520px}
-
-/* ── PRODUCTS ── */
+/* PRODUCTS */
 .products{padding:110px 0;background:var(--white)}
-.prod-hd{display:grid;grid-template-columns:1fr auto;gap:4vw;align-items:end;margin-bottom:3.5rem}
-.prod-filter{display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:flex-end}
-.fb{padding:0.38rem 1rem;font-size:0.66rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--border);background:transparent;color:var(--mid);cursor:pointer;border-radius:2px;transition:all 0.2s;font-family:'Jost',sans-serif}
+.prod-head{display:grid;grid-template-columns:1fr auto;gap:3vw;align-items:end;margin-bottom:3.5rem}
+.prod-filter{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:flex-end;margin-bottom:.8rem}
+.fb{padding:.35rem .95rem;font-size:.64rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);background:transparent;color:var(--mid);cursor:pointer;border-radius:2px;transition:all .2s;font-family:'Jost',sans-serif}
 .fb.on,.fb:hover{border-color:var(--gold);color:var(--gold);background:var(--goldlight)}
-.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-
-/* PRODUCT CARD */
-.pc{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:box-shadow 0.3s,transform 0.3s;display:flex;flex-direction:column}
-.pc:hover{box-shadow:0 14px 48px rgba(0,0,0,0.09);transform:translateY(-4px)}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.pc{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;display:flex;flex-direction:column;transition:transform .32s cubic-bezier(.2,0,.2,1),box-shadow .32s cubic-bezier(.2,0,.2,1)}
+.pc:hover{transform:translateY(-6px) scale(1.008);box-shadow:0 20px 56px rgba(0,0,0,.11),0 0 0 1px rgba(181,145,90,.1)}
 .pc-img{aspect-ratio:16/10;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.pc-img-inner{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
-.pc:hover .pc-img-inner{transform:scale(1.04)}
-.pc-img-face{width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform 0.5s}
-.pc:hover .pc-img-face{transform:scale(1.04)}
-.pc-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-.pc-img-placeholder .glyph{font-family:'Cormorant Garamond',serif;font-size:3rem;color:rgba(181,145,90,0.28)}
-.pc-badge{position:absolute;top:0.9rem;left:0.9rem;padding:0.25rem 0.65rem;font-size:0.58rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;border-radius:2px}
-.b-approved{background:var(--ink);color:var(--white)}
-.b-top{background:var(--gold);color:var(--white)}
-.b-new{background:var(--accent);color:var(--white)}
-.b-best{background:var(--sage);color:var(--white)}
-.pc-body{padding:1.5rem 1.6rem 1.8rem;flex:1;display:flex;flex-direction:column}
-.pc-cat{font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
-.pc-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;color:var(--ink);margin-bottom:0.35rem;line-height:1.25}
-.pc-ingr{font-size:0.77rem;font-weight:300;color:var(--mid);line-height:1.6;margin-bottom:1.2rem;flex:1}
+/* IMAGE SLOT — add <img src="images/X.jpg"> inside .pc-img for real photos */
+.pc-art{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem}
+.pca-k{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:rgba(12,11,9,.18);line-height:1}
+.pca-en{font-size:.56rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(12,11,9,.28);margin-bottom:.3rem}
+.pca-line{width:26px;height:1px;background:var(--gold);margin:.2rem 0}
+.pca-s{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);line-height:1}
+.pc-badge{position:absolute;top:.8rem;left:.8rem;padding:.22rem .6rem;font-size:.56rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-radius:2px}
+.b-gold{background:var(--gold);color:var(--white)}.b-ink{background:var(--ink);color:var(--white)}.b-sage{background:var(--sage);color:var(--white)}.b-rose{background:var(--rose);color:var(--white)}
+.pc-body{padding:1.4rem 1.5rem 1.7rem;flex:1;display:flex;flex-direction:column}
+.pc-cat{font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.pc-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:var(--ink);margin-bottom:.3rem;line-height:1.25}
+.pc-ingr{font-size:.74rem;font-weight:300;color:var(--mid);line-height:1.65;margin-bottom:1.1rem;flex:1}
 .pc-ingr strong{color:var(--ink);font-weight:500}
-.pc-scores{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-bottom:1.2rem}
-.ps{text-align:center;padding:0.5rem 0.2rem;background:var(--cream);border-radius:var(--r)}
-.ps-v{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--ink);line-height:1}
-.ps-k{font-size:0.57rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.1rem}
-.pc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--border);margin-top:auto}
-.pc-total{display:flex;align-items:baseline;gap:0.3rem}
-.pc-total-n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:var(--gold);line-height:1}
-.pc-total-m{font-size:0.68rem;color:var(--muted)}
-.pc-link{display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1rem;border:1px solid var(--border);border-radius:2px;font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:all 0.2s}
+.pc-scores{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;margin-bottom:1.1rem}
+.ps{text-align:center;padding:.45rem .15rem;background:var(--cream);border-radius:var(--r)}
+.ps-v{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--ink);line-height:1}
+.ps-k{font-size:.54rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.1rem}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;padding-top:.9rem;border-top:1px solid var(--border);margin-top:auto}
+.pc-tot{display:flex;align-items:baseline;gap:.25rem}
+.pc-tot-n{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:400;color:var(--gold);line-height:1}
+.pc-tot-m{font-size:.65rem;color:var(--muted)}
+.pc-link{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .9rem;border:1px solid var(--border);border-radius:2px;font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:all .2s}
 .pc-link:hover{border-color:var(--gold);color:var(--gold);background:var(--goldlight)}
-.pc-link-arrow{font-size:0.75rem;transition:transform 0.2s}
-.pc-link:hover .pc-link-arrow{transform:translateX(3px)}
 
-/* ── ANALYSES ── */
-<script>
-
-const ctx = document.getElementById('ingredientChart');
-
-new Chart(ctx, {
-type: 'radar',
-data: {
-
-labels: [
-"Barrier Repair",
-"INCI Transparency",
-"Clean Beauty",
-"Clinical Evidence",
-"Skin Compatibility"
-],
-
-datasets: [{
-label: "Absolute CellActive",
-data: [94,91,96,92,93],
-borderWidth:2
-}]
-
-},
-
-options:{
-responsive:true,
-plugins:{
-legend:{
-labels:{
-font:{
-size:14
-}
-}
-}
-},
-
-scales:{
-r:{
-beginAtZero:true,
-max:100
-}
-}
-}
-
-});
-
-</script>
-  
+/* ANALYSES */
 .analyses{padding:110px 0;background:var(--cream)}
-.an-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start;margin-bottom:5rem}
-.an-visual{position:relative}
-
-/* Brand face in analysis section */
-.an-face-wrap{position:relative;border-radius:var(--r2);overflow:hidden;aspect-ratio:3/4;box-shadow:0 20px 60px rgba(0,0,0,0.12)}
-.an-face{width:100%;height:100%;object-fit:cover;object-position:center top;filter:sepia(5%) brightness(0.98)}
-.an-face-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,11,9,0.7) 0%,transparent 50%)}
-.an-face-card{position:absolute;bottom:1.8rem;left:1.8rem;right:1.8rem;background:rgba(12,11,9,0.82);backdrop-filter:blur(14px);border:1px solid rgba(181,145,90,0.25);border-radius:var(--r);padding:1.5rem 1.6rem}
-.afc-title{font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.afc-bars{display:flex;flex-direction:column;gap:0.8rem}
-.afc-row{display:flex;align-items:center;gap:0.9rem}
-.afc-label{font-size:0.66rem;color:rgba(255,255,255,0.45);width:110px;flex-shrink:0;text-align:right}
-.afc-track{flex:1;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
-.afc-fill{height:100%;border-radius:2px;width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
-.fc1{background:var(--gold)}
-.fc2{background:var(--sage)}
-.fc3{background:var(--sky)}
-.fc4{background:var(--accent)}
-.afc-val{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:var(--white);width:28px;flex-shrink:0}
-.afc-total{margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:baseline;gap:0.4rem}
-.afc-total-n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--gold)}
-.afc-total-s{font-size:0.65rem;color:rgba(255,255,255,0.28);letter-spacing:0.08em;text-transform:uppercase}
-
-.an-steps{display:flex;flex-direction:column;gap:1.4rem;margin-top:2.2rem}
-.as-step{display:flex;gap:1.2rem;align-items:flex-start}
-.as-n{width:26px;height:26px;border:1px solid var(--goldpale);display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:2px}
-.as-n span{font-family:'Cormorant Garamond',serif;font-size:0.8rem;color:var(--gold)}
-.as-title{font-size:0.82rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem}
-.as-desc{font-size:0.78rem;font-weight:300;color:var(--mid);line-height:1.75}
-
-/* Analysis dimension cards */
+.an-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start;margin-bottom:4.5rem}
+/* IMAGE SLOT — add <img> inside .an-panel for real analysis image */
+.an-panel{position:relative;border-radius:var(--r2);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(150deg,#f5ede0 0%,#ede5f0 50%,#dde8f2 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 56px rgba(0,0,0,.1)}
+.an-panel-art{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:2;gap:.5rem}
+.an-panel-art::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:170px;height:170px;border-radius:50%;border:1px solid rgba(181,145,90,.2)}
+.an-panel-art::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:210px;height:210px;border-radius:50%;border:1px solid rgba(181,145,90,.1)}
+.an-glyph{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;background:linear-gradient(135deg,rgba(181,145,90,.55),rgba(181,145,90,.2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;position:relative;z-index:2}
+.an-glabel{font-size:.56rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.55}
+.an-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,11,9,.72) 0%,transparent 48%)}
+.an-card{position:absolute;bottom:1.6rem;left:1.6rem;right:1.6rem;background:rgba(12,11,9,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(181,145,90,.22);border-radius:var(--r);padding:1.3rem 1.4rem}
+.ac-title{font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
+.ac-bars{display:flex;flex-direction:column;gap:.75rem}
+.ac-row{display:flex;align-items:center;gap:.8rem}
+.ac-lbl{font-size:.62rem;color:rgba(255,255,255,.42);width:108px;flex-shrink:0;text-align:right}
+.ac-track{flex:1;height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden}
+.ac-fill{height:100%;border-radius:2px;width:0;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
+.f1{background:var(--gold)}.f2{background:var(--sage)}.f3{background:var(--sky)}.f4{background:rgba(181,145,90,.35)}
+.ac-val{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--white);width:26px;flex-shrink:0}
+.ac-total{margin-top:1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:baseline;gap:.4rem}
+.ac-tot-n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--gold)}
+.ac-tot-s{font-size:.6rem;color:rgba(255,255,255,.26);letter-spacing:.08em;text-transform:uppercase}
+.an-steps{display:flex;flex-direction:column;gap:1.3rem;margin-top:2rem}
+.as-step{display:flex;gap:1.1rem;align-items:flex-start}
+.as-num{width:24px;height:24px;border:1px solid var(--goldpale);display:flex;align-items:center;justify-content:center;flex-shrink:0;border-radius:2px}
+.as-num span{font-family:'Cormorant Garamond',serif;font-size:.75rem;color:var(--gold)}
+.as-t{font-size:.8rem;font-weight:500;color:var(--ink);margin-bottom:.18rem}
+.as-d{font-size:.76rem;font-weight:300;color:var(--mid);line-height:1.75}
+.an-chart-wrap{margin-bottom:4rem}
+.an-chart-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.an-chart-box{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.8rem;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.acl-row{display:flex;align-items:center;gap:.7rem;font-size:.72rem;color:var(--mid);margin-bottom:.5rem}
+.acl-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 .an-dims{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
-.ad{background:var(--white);padding:1.8rem 1.6rem;transition:background 0.2s}
-.ad:hover{background:#fdfaf5}
-.ad-icon{width:32px;height:32px;border:1px solid var(--goldpale);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem;font-size:0.95rem}
-.ad-title{font-size:0.8rem;font-weight:500;color:var(--ink);margin-bottom:0.4rem}
-.ad-desc{font-size:0.77rem;font-weight:300;color:var(--mid);line-height:1.7}
+.ad{background:var(--white);padding:1.7rem 1.5rem;transition:background .2s}
+.ad:hover{background:#fdfaf6}
+.ad-icon{width:30px;height:30px;border:1px solid var(--goldpale);border-radius:3px;display:flex;align-items:center;justify-content:center;margin-bottom:.8rem;font-size:.88rem}
+.ad-t{font-size:.78rem;font-weight:500;color:var(--ink);margin-bottom:.35rem}
+.ad-d{font-size:.74rem;font-weight:300;color:var(--mid);line-height:1.72}
 
-/* ── COMPARISON ── */
+/* COMPARISON */
 .compare{padding:110px 0;background:var(--white)}
-.cmp-top{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center;margin-bottom:4rem}
-
-/* Brand face in compare section */
-.cmp-face-wrap{position:relative;border-radius:var(--r2);overflow:hidden;aspect-ratio:4/5}
-.cmp-face{width:100%;height:100%;object-fit:cover;object-position:center 15%}
-.cmp-face-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(12,11,9,0.5) 100%)}
-.cmp-face-quote{position:absolute;bottom:2rem;left:2rem;right:2rem}
-.cfq-text{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;font-weight:300;color:var(--white);line-height:1.4;margin-bottom:0.5rem}
-.cfq-attr{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.45)}
-
-.cmp-table-wrap{border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
-.cmp-table{width:100%;border-collapse:collapse;font-size:0.82rem}
-.cmp-table th{padding:0.9rem 1.2rem;text-align:left;background:var(--cream);font-size:0.62rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
-.cmp-table th:first-child{border-right:1px solid var(--border);width:140px}
-.cmp-table td{padding:1rem 1.2rem;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:middle}
-.cmp-table td:first-child{font-size:0.75rem;font-weight:500;color:var(--mid);border-right:1px solid var(--border);background:var(--cream)}
+.cmp-table-wrap{border:1px solid var(--border);border-radius:var(--r2);overflow:auto;margin-top:2.5rem}
+.cmp-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.cmp-table th{padding:.85rem 1.1rem;text-align:left;background:var(--cream);font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap}
+.cmp-table th:first-child{border-right:1px solid var(--border);width:130px}
+.cmp-table td{padding:.95rem 1.1rem;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:middle}
+.cmp-table td:first-child{font-size:.72rem;font-weight:500;color:var(--mid);border-right:1px solid var(--border);background:var(--cream);white-space:nowrap}
 .cmp-table tr:last-child td{border-bottom:none}
 .cmp-table tr:hover td{background:#fdfaf5}
 .cmp-table tr:hover td:first-child{background:var(--warm)}
-.sp{display:inline-flex;align-items:center;gap:0.35rem;padding:0.2rem 0.65rem;border-radius:20px;font-size:0.73rem;font-weight:500}
+.sp{display:inline-flex;align-items:center;gap:.32rem;padding:.18rem .6rem;border-radius:20px;font-size:.7rem;font-weight:500}
 .sp::before{content:'';width:4px;height:4px;border-radius:50%;background:currentColor}
-.sh{background:#edf7f0;color:#2e6e48}
-.sm{background:#fdf7e8;color:#7a5c18}
-.sl2{background:#fdeeed;color:#7a2828}
-.cmp-winner{display:inline-flex;align-items:center;padding:0.18rem 0.55rem;background:var(--ink);color:var(--white);font-size:0.58rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;margin-left:0.4rem;vertical-align:middle}
-.cmp-legend{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.2rem}
-.cl-item{font-size:0.7rem;color:var(--muted);display:flex;align-items:center;gap:0.4rem}
-.cl-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.sh{background:#edf7f0;color:#2a6844}.sm{background:#fdf7e8;color:#7a5c18}.sl2{background:#fdeeed;color:#7a2828}
+.win{display:inline-flex;align-items:center;padding:.15rem .5rem;background:var(--ink);color:var(--white);font-size:.56rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;margin-left:.4rem;vertical-align:middle}
+.cmp-legend{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:1.1rem}
+.cl{font-size:.68rem;color:var(--muted);display:flex;align-items:center;gap:.38rem}
+.cl-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
 
-/* ── STATS ── */
-.stats{background:var(--ink);overflow:hidden}
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1180px;margin:0 auto}
-.stc{padding:4rem 2rem;border-right:1px solid rgba(255,255,255,0.05);text-align:center;position:relative;transition:background 0.3s}
+/* STATS */
+.stats{background:var(--ink)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1160px;margin:0 auto}
+.stc{padding:3.5rem 1.8rem;text-align:center;border-right:1px solid rgba(255,255,255,.05);position:relative;transition:background .3s}
 .stc:last-child{border-right:none}
-.stc:hover{background:rgba(255,255,255,0.03)}
-.stc::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(181,145,90,0.35),transparent)}
-.stc-n{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;line-height:1;color:var(--white);margin-bottom:0.5rem}
-.stc-n.gold{color:var(--gold)}
-.stc-l{font-size:0.65rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.28)}
+.stc:hover{background:rgba(255,255,255,.03)}
+.stc::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:48%;height:1px;background:linear-gradient(90deg,transparent,rgba(181,145,90,.32),transparent)}
+.stc-n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;line-height:1;color:var(--white);margin-bottom:.5rem}
+.stc-n.g{color:var(--gold)}
+.stc-l{font-size:.62rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.26)}
 
-/* ── METHOD ── */
+/* METHOD */
 .method{padding:110px 0;background:var(--cream)}
-.method-hd{text-align:center;margin-bottom:5rem}
-.method-hd .sl{justify-content:center}
+.method-hd{text-align:center;margin-bottom:4.5rem}
+.method-hd .lbl{justify-content:center}
 .method-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--border);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
-.ms{background:var(--white);padding:2.5rem 1.8rem;position:relative;transition:background 0.2s}
-.ms::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:transparent;transition:background 0.3s}
-.ms:hover{background:#fdfaf5}
+.ms{background:var(--white);padding:2.3rem 1.7rem;position:relative;transition:background .2s}
+.ms::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:transparent;transition:background .3s}
+.ms:hover{background:#fdfaf6}
 .ms:hover::before{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
-.ms-n{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;color:var(--goldpale);line-height:1;margin-bottom:1.5rem}
-.ms-t{font-size:0.85rem;font-weight:500;color:var(--ink);margin-bottom:0.6rem}
-.ms-b{font-size:0.8rem;font-weight:300;color:var(--mid);line-height:1.85}
+.ms-n{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--goldpale);line-height:1;margin-bottom:1.4rem}
+.ms-t{font-size:.82rem;font-weight:500;color:var(--ink);margin-bottom:.55rem}
+.ms-b{font-size:.78rem;font-weight:300;color:var(--mid);line-height:1.85}
 
-/* ── ABOUT EDITORIAL ── */
+/* ABOUT */
 .about{padding:110px 0;background:var(--white)}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
-.about-face-wrap{position:relative;border-radius:var(--r2);overflow:hidden;aspect-ratio:3/4}
-.about-face{width:100%;height:100%;object-fit:cover;object-position:center top}
-.about-face-caption{position:absolute;bottom:0;left:0;right:0;padding:2rem 1.8rem;background:linear-gradient(to top,rgba(12,11,9,0.8),transparent)}
-.afc2-label{font-size:0.58rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem}
-.afc2-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--white)}
-.about-content .sl{margin-bottom:1.2rem}
-.about-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.4rem}
-.af2{display:flex;flex-direction:column;gap:0.3rem;padding:1.2rem;background:var(--cream);border-radius:var(--r);border:1px solid var(--border)}
-.af2-t{font-size:0.78rem;font-weight:500;color:var(--ink)}
-.af2-d{font-size:0.74rem;font-weight:300;color:var(--mid);line-height:1.65}
+/* IMAGE SLOT — add <img> inside .about-panel */
+.about-panel{position:relative;border-radius:var(--r2);overflow:hidden;aspect-ratio:3/4;background:linear-gradient(150deg,#faf5ee 0%,#f0e8f5 50%,#e4f0f8 100%);display:flex;align-items:center;justify-content:center}
+.about-art{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.about-art::before{content:'韓光';font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:300;color:rgba(181,145,90,.08);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap}
+.about-art-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.3rem 1.8rem;border:1px solid rgba(181,145,90,.2);border-radius:var(--r);text-align:center}
+.aai-glyph{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:rgba(181,145,90,.4);line-height:1}
+.aai-t{font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.65}
+.about-caption{position:absolute;bottom:0;left:0;right:0;padding:1.6rem 1.8rem;background:linear-gradient(to top,rgba(12,11,9,.45),transparent)}
+.acp-l{font-size:.56rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
+.acp-n{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:var(--white)}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2.2rem}
+.af{padding:1.1rem;background:var(--cream);border-radius:var(--r);border:1px solid var(--border)}
+.af-t{font-size:.76rem;font-weight:500;color:var(--ink);margin-bottom:.25rem}
+.af-d{font-size:.72rem;font-weight:300;color:var(--mid);line-height:1.65}
 
-/* ── INSTAGRAM ── */
+/* INSTAGRAM */
 .igram{padding:100px 0;background:var(--cream)}
-.ig-inner{max-width:1180px;margin:0 auto;padding:0 4vw;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
-.ig-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:0.7rem}
-.igp{aspect-ratio:1;border-radius:var(--r);overflow:hidden;position:relative;background:var(--warm);cursor:pointer}
-.igp img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 0.5s;display:block}
-.igp:hover img{transform:scale(1.08)}
-.igp-ov{position:absolute;inset:0;background:rgba(12,11,9,0);display:flex;align-items:center;justify-content:center;transition:background 0.3s}
-.igp:hover .igp-ov{background:rgba(12,11,9,0.32)}
-.igp-ov span{opacity:0;font-size:0.6rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);transition:opacity 0.3s}
+.ig-wrap{max-width:1160px;margin:0 auto;padding:0 5vw;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:center}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+/* IMAGE SLOT — add <img> inside .igp for real Instagram photos */
+.igp{aspect-ratio:1;border-radius:var(--r);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;transition:transform .3s;cursor:pointer}
+.igp:hover{transform:scale(1.04)}
+.igp-art{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;padding:.7rem;transition:transform .5s}
+.igp:hover .igp-art{transform:scale(1.08)}
+.igp-k{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:rgba(12,11,9,.2);line-height:1}
+.igp-en{font-size:.48rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(12,11,9,.26)}
+.igp-ov{position:absolute;inset:0;background:rgba(12,11,9,0);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.igp:hover .igp-ov{background:rgba(12,11,9,.32)}
+.igp-ov span{opacity:0;font-size:.58rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--white);transition:opacity .3s}
 .igp:hover .igp-ov span{opacity:1}
-.igp-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-.igp-placeholder .g{font-family:'Cormorant Garamond',serif;font-size:2rem;color:rgba(181,145,90,0.3)}
 
-/* ── CTA ── */
-.cta-final{padding:130px 0;background:var(--ink);text-align:center;position:relative;overflow:hidden}
-.cta-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(181,145,90,0.07),transparent 60%);pointer-events:none}
-.cta-final-inner{max-width:640px;margin:0 auto;padding:0 4vw;position:relative}
-.cta-final .sl{justify-content:center;color:rgba(181,145,90,0.65)}
-.cta-final .sl::before{background:rgba(181,145,90,0.25)}
-.cta-final .st{color:var(--white)}
-.cta-final .st em{color:var(--gold2)}
-.cta-final .sb{color:rgba(255,255,255,0.42);margin:0 auto 3rem}
-.cta-div{display:flex;align-items:center;gap:0.9rem;justify-content:center;margin:1.5rem auto 2.5rem}
-.cta-div-line{width:50px;height:1px;background:rgba(181,145,90,0.25)}
-.cta-div-diamond{width:5px;height:5px;transform:rotate(45deg);background:var(--gold);opacity:0.5}
-.cta-acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-ghost{display:inline-block;padding:0.8rem 2.2rem;background:transparent;color:rgba(255,255,255,0.5);font-size:0.7rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(255,255,255,0.12);border-radius:2px;transition:all 0.2s}
-.btn-ghost:hover{border-color:rgba(255,255,255,0.3);color:var(--white)}
+/* CTA */
+.cta{padding:120px 0;background:var(--ink);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(181,145,90,.07),transparent 60%);pointer-events:none}
+.cta-in{max-width:600px;margin:0 auto;padding:0 5vw;position:relative}
+.cta .lbl{justify-content:center;color:rgba(181,145,90,.6)}
+.cta .lbl::before{background:rgba(181,145,90,.22)}
+.cta .h2{color:var(--white)}
+.cta .h2 em{color:var(--gold2)}
+.cta .body-t{color:rgba(255,255,255,.4);margin:0 auto 2.8rem}
+.cta-div{display:flex;align-items:center;gap:.9rem;justify-content:center;margin:1.4rem 0 2.4rem}
+.cta-div-line{width:44px;height:1px;background:rgba(181,145,90,.22)}
+.cta-div-diamond{width:5px;height:5px;transform:rotate(45deg);background:var(--gold);opacity:.45}
+.cta-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
 
-/* ── FOOTER ── */
-footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding:2.5rem 4vw;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;position:relative;z-index:10}
-.f-brand{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
-.f-links{display:flex;gap:1.8rem;justify-content:center;list-style:none;flex-wrap:wrap}
-.f-links a{font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.22);text-decoration:none;transition:color 0.2s}
-.f-links a:hover{color:rgba(255,255,255,0.55)}
-.f-copy{font-size:0.63rem;color:rgba(255,255,255,0.18);text-align:right}
+/* FOOTER */
+footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.04);padding:2.2rem 5vw;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;position:relative;z-index:10}
+.f-brand{font-family:'Cormorant Garamond',serif;font-size:.9rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.f-links{display:flex;gap:1.6rem;justify-content:center;list-style:none;flex-wrap:wrap}
+.f-links a{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.2);text-decoration:none;transition:color .2s;font-weight:500}
+.f-links a:hover{color:rgba(255,255,255,.55)}
+.f-copy{font-size:.6rem;color:rgba(255,255,255,.16);text-align:right}
 
-/* ── SCROLL REVEALS ── */
-.rv{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
-.rvl{opacity:0;transform:translateX(-18px);transition:opacity 0.7s ease,transform 0.7s ease}
-.rvr{opacity:0;transform:translateX(18px);transition:opacity 0.7s ease,transform 0.7s ease}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.rvl{opacity:0;transform:translateX(-16px);transition:opacity .7s ease,transform .7s ease}
+.rvr{opacity:0;transform:translateX(16px);transition:opacity .7s ease,transform .7s ease}
 .rv.in,.rvl.in,.rvr.in{opacity:1;transform:none}
-.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}.d5{transition-delay:0.4s}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:1024px){
-  .hero{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr;min-height:auto}
   .hero-r{display:none}
-  .hero-l{padding:14vh 4vw 10vh}
-  .prod-hd{grid-template-columns:1fr}
+  .hero-l{padding:8vh 5vw 7vh}
+  .prod-head{grid-template-columns:1fr}
+  .prod-filter{justify-content:flex-start}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
-  .an-grid{grid-template-columns:1fr}
-  .an-face-wrap{max-width:440px}
-  .cmp-top{grid-template-columns:1fr}
+  .an-wrap{grid-template-columns:1fr}
+  .an-panel{aspect-ratio:16/9;max-width:100%}
+  .an-panel-art::before,.an-panel-art::after{display:none}
+  .an-chart-inner{grid-template-columns:1fr}
   .about-grid{grid-template-columns:1fr}
-  .ig-inner{grid-template-columns:1fr}
+  .ig-wrap{grid-template-columns:1fr}
   .stats-row{grid-template-columns:repeat(2,1fr)}
   .method-steps{grid-template-columns:repeat(2,1fr)}
   footer{grid-template-columns:1fr;text-align:center}
-  .f-copy{text-align:center}
+  .f-copy{text-align:center}.f-links{justify-content:center}
 }
 @media(max-width:640px){
-  .nav-links{display:none}
+  :root{--nav:54px}
+  .nav-links{display:none}.nav-ig{display:none}
+  .hero-l{padding:5vh 5vw}
+  .hero-h1{font-size:2.2rem}
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .hero-btns a{text-align:center}
   .prod-grid{grid-template-columns:1fr}
   .an-dims{grid-template-columns:1fr}
   .about-features{grid-template-columns:1fr}
   .method-steps{grid-template-columns:1fr}
   .stats-row{grid-template-columns:1fr 1fr}
+  .ticker{display:none}
+  .products,.analyses,.compare,.method,.about,.igram{padding:72px 0}
+  .cta{padding:80px 0}
+  .stc{padding:2.2rem 1rem}
+  .cmp-table th:nth-child(4),.cmp-table td:nth-child(4){display:none}
+}
+@supports not (backdrop-filter:blur(1px)){
+  nav{background:rgba(250,248,244,.99)}
+  .hero-badge,.an-card{background:rgba(12,11,9,.97)}
+}
+@supports(padding:max(0px)){
+  footer{padding-bottom:max(2.2rem,env(safe-area-inset-bottom))}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-brand">
     <div class="nav-mark"><span>韓</span></div>
@@ -458,9 +330,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
     <li><a href="#method">Method</a></li>
     <li><a href="#about">About</a></li>
   </ul>
-  <div class="nav-right">
+  <div class="nav-r">
     <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="nav-ig">@hanglanzglobal</a>
-    <a href="mailto:hanglanzglobal@gmail.com" class="nav-btn">Contact</a>
+    <a href="mailto:hanglanzglobal@gmail.com" class="nav-cta">Contact</a>
   </div>
 </nav>
 
@@ -469,142 +341,149 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
 <!-- HERO -->
 <section class="hero">
   <div class="hero-l">
-    <p class="hero-eyebrow rv">K-Beauty Ingredient Intelligence · DACH Region</p>
-    <h1 class="hero-h1 rv d1">Where Korean beauty<br>finds its <em>Glanz.</em></h1>
-    <p class="hero-tagline rv d2">Science-backed analysis. Transparent scores. Curated intelligence.</p>
-    <p class="hero-body rv d3">HanGlanz decodes Korean skincare and wellness for German-speaking Europe — with independent ingredient scoring, INCI transparency checks, and verified Atomy product benchmarks. Know exactly what you're putting on your skin.</p>
-    <div class="hero-actions rv d4">
-      <a href="#products" class="btn-solid">Explore Products</a>
-      <a href="#analyses" class="btn-outline">View Analyses</a>
+    <p class="hero-eye">K-Beauty Ingredient Intelligence · DACH Region</p>
+    <h1 class="hero-h1">Where Korean beauty<br>finds its <em>Glanz.</em></h1>
+    <p class="hero-sub">Science-backed analysis. Transparent scores. Curated intelligence.</p>
+    <p class="hero-body">HanGlanz decodes Korean skincare and wellness for German-speaking Europe — with independent ingredient scoring, INCI transparency checks, and verified Atomy product benchmarks.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-dark">Explore Products</a>
+      <a href="#analyses" class="btn-line">View Analyses</a>
     </div>
   </div>
   <div class="hero-r">
-    <!-- Brand face image from Notion -->
-    <img class="hero-face" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/24056bff-b313-40eb-9710-026c54c1c568/A628EB3C-EB50-42DA-8CDB-D260113E5D10.jpeg" alt="HanGlanz Brand Ambassador" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#f5eadd,#e8dff0)'"/>
+    <!--
+    ╔══════════════════════════════════════════╗
+    ║  ADD YOUR HERO PHOTO HERE                ║
+    ║  1. Upload photo to GitHub → images/     ║
+    ║  2. Replace this comment with:           ║
+    ║  <img class="hero-r-img"                 ║
+    ║    src="images/hero.jpg"                 ║
+    ║    alt="HanGlanz"                        ║
+    ║    style="width:100%;height:100%;        ║
+    ║    object-fit:cover;display:block"/>     ║
+    ╚══════════════════════════════════════════╝
+    -->
+    <div class="hero-r-art">
+      <div class="hero-r-circle"><span class="hero-r-glyph">韓</span></div>
+    </div>
     <div class="hero-r-overlay"></div>
-    <div class="hero-r-badge rv d2">
-      <div class="hrb-label">HanGlanz Benchmark</div>
-      <div class="hrb-score">94</div>
-      <div class="hrb-sub">Absolute CellActive · Overall Score</div>
+    <div class="hero-badge">
+      <div class="hb-lbl">HanGlanz Benchmark Approved</div>
+      <div class="hb-score">94</div>
+      <div class="hb-sub">Absolute CellActive · Overall Score</div>
     </div>
   </div>
 </section>
 
 <!-- TICKER -->
 <div class="ticker">
-  <div class="ticker-track">
-    <div class="ti"><div class="ti-dot"></div><strong>Absolute CellActive Set</strong> — Score: 94 / 100</div>
-    <div class="ti"><div class="ti-dot"></div><strong>HemoHIM-G</strong> — Bioavailability Score: 96</div>
+  <div class="ticker-inner">
+    <div class="ti"><div class="ti-dot"></div><strong>Absolute CellActive</strong> — Score: 94 / 100</div>
+    <div class="ti"><div class="ti-dot"></div><strong>HemoHIM-G</strong> — Bioavailability: 96</div>
     <div class="ti"><div class="ti-dot"></div><strong>THE FAME Set</strong> — INCI Transparency: 91</div>
     <div class="ti"><div class="ti-dot"></div><strong>Benchmark Approved</strong> — Score ≥ 80 certified</div>
-    <div class="ti"><div class="ti-dot"></div><strong>Vitamin C 1000mg</strong> — Clinical Dosage: 93</div>
-    <div class="ti"><div class="ti-dot"></div><strong>Fresh Sun Lotion</strong> — Clean Beauty: 95</div>
-    <div class="ti"><div class="ti-dot"></div><strong>Inner Collagen</strong> — Bioavailability: 88</div>
-    <div class="ti"><div class="ti-dot"></div><strong>21 Atomy Products</strong> — Analysed for DACH</div>
-    <div class="ti"><div class="ti-dot"></div><strong>Absolute CellActive Set</strong> — Score: 94 / 100</div>
-    <div class="ti"><div class="ti-dot"></div><strong>HemoHIM-G</strong> — Bioavailability Score: 96</div>
+    <div class="ti"><div class="ti-dot"></div><strong>Vitamin C 1000mg</strong> — Dosage Score: 93</div>
+    <div class="ti"><div class="ti-dot"></div><strong>Fresh Sun SPF50+</strong> — Clean Beauty: 95</div>
+    <div class="ti"><div class="ti-dot"></div><strong>21 Products</strong> — Analysed for DACH Market</div>
+    <div class="ti"><div class="ti-dot"></div><strong>Absolute CellActive</strong> — Score: 94 / 100</div>
+    <div class="ti"><div class="ti-dot"></div><strong>HemoHIM-G</strong> — Bioavailability: 96</div>
     <div class="ti"><div class="ti-dot"></div><strong>THE FAME Set</strong> — INCI Transparency: 91</div>
     <div class="ti"><div class="ti-dot"></div><strong>Benchmark Approved</strong> — Score ≥ 80 certified</div>
-    <div class="ti"><div class="ti-dot"></div><strong>Vitamin C 1000mg</strong> — Clinical Dosage: 93</div>
-    <div class="ti"><div class="ti-dot"></div><strong>Fresh Sun Lotion</strong> — Clean Beauty: 95</div>
-    <div class="ti"><div class="ti-dot"></div><strong>Inner Collagen</strong> — Bioavailability: 88</div>
-    <div class="ti"><div class="ti-dot"></div><strong>21 Atomy Products</strong> — Analysed for DACH</div>
+    <div class="ti"><div class="ti-dot"></div><strong>Vitamin C 1000mg</strong> — Dosage Score: 93</div>
+    <div class="ti"><div class="ti-dot"></div><strong>Fresh Sun SPF50+</strong> — Clean Beauty: 95</div>
+    <div class="ti"><div class="ti-dot"></div><strong>21 Products</strong> — Analysed for DACH Market</div>
   </div>
 </div>
 
 <!-- PRODUCTS -->
 <section id="products" class="products">
   <div class="si">
-    <div class="prod-hd">
+    <div class="prod-head">
       <div class="rvl">
-        <p class="sl">Featured Products</p>
-        <h2 class="st">Analysed Atomy Products<br>with <em>Benchmark Score</em></h2>
-        <p class="sb">Every product carries a HanGlanz Benchmark Score — independently assessed across three scientific dimensions tailored to its category.</p>
+        <p class="lbl">Featured Products</p>
+        <h2 class="h2">Analysed Atomy Products<br>with <em>Benchmark Score</em></h2>
+        <p class="body-t">Every product carries a HanGlanz Benchmark Score — independently assessed across three scientific dimensions.</p>
       </div>
-      <div class="rvr" style="display:flex;flex-direction:column;align-items:flex-end;gap:1rem">
+      <div class="rvr" style="display:flex;flex-direction:column;align-items:flex-end;gap:.9rem">
         <div class="prod-filter">
-          <button class="fb on" onclick="filter('all',this)">All</button>
-          <button class="fb" onclick="filter('skincare',this)">Skincare</button>
-          <button class="fb" onclick="filter('supplement',this)">Supplements</button>
-          <button class="fb" onclick="filter('body',this)">Body & Hair</button>
+          <button class="fb on" onclick="filterProd('all',this)">All</button>
+          <button class="fb" onclick="filterProd('skincare',this)">Skincare</button>
+          <button class="fb" onclick="filterProd('supplement',this)">Supplements</button>
+          <button class="fb" onclick="filterProd('body',this)">Body & Hair</button>
         </div>
-        <a href="https://eu.atomy.com" target="_blank" class="btn-outline" style="font-size:0.68rem">All Products on Atomy EU →</a>
+        <a href="https://eu.atomy.com" target="_blank" class="btn-line" style="font-size:.66rem">All 21 Products on Atomy EU →</a>
       </div>
     </div>
+    <div class="prod-grid">
 
-    <div class="prod-grid" id="pgrid">
-
-      <!-- 1 · Absolute CellActive Set -->
       <div class="pc rv d1" data-cat="skincare">
-        <div class="pc-img" style="background:linear-gradient(135deg,#f5eadd,#e8d8c0)">
-          <img class="pc-img-face" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/24056bff-b313-40eb-9710-026c54c1c568/A628EB3C-EB50-42DA-8CDB-D260113E5D10.jpeg" alt="Absolute CellActive" onerror="this.parentElement.innerHTML='<div class=pc-img-placeholder><span class=glyph>셀</span></div>'"/>
-          <div class="pc-badge b-top">Top Rated</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#f5ead8,#e8d5b8)">
+          <!-- ADD: <img src="images/cellactive.jpg" alt="Absolute CellActive" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/> -->
+          <div class="pc-art"><span class="pca-k">세포활성</span><span class="pca-en">CellActive</span><div class="pca-line"></div><span class="pca-s">94</span></div>
+          <div class="pc-badge b-gold">Top Rated</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Anti-Aging · Skincare System</p>
           <h3 class="pc-name">Absolute CellActive Skincare Set</h3>
-          <p class="pc-ingr"><strong>Key actives:</strong> Plant EGF · Oligopeptide · Niacinamide · Adenosine · Green Tea — Dermatest® Excellent · Patented technology</p>
+          <p class="pc-ingr"><strong>Key actives:</strong> Plant EGF · Oligopeptide · Niacinamide · Adenosine · Green Tea — Dermatest® Excellent</p>
           <div class="pc-scores">
             <div class="ps"><div class="ps-v">94</div><div class="ps-k">Barrier</div></div>
             <div class="ps"><div class="ps-v">91</div><div class="ps-k">INCI</div></div>
             <div class="ps"><div class="ps-v">96</div><div class="ps-k">Clean</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">94</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700207" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">94</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700207" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 2 · HemoHIM-G -->
       <div class="pc rv d2" data-cat="supplement">
-        <div class="pc-img" style="background:linear-gradient(135deg,#eaf2e8,#d0e4cc)">
-          <img class="pc-img-face" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/f1e60154-13ee-4c55-a8d9-957739d7dde3/IMG_8338.png" alt="HemoHIM" onerror="this.parentElement.innerHTML='<div class=pc-img-placeholder><span class=glyph>헤</span></div>'"/>
-          <div class="pc-badge b-best">#1 Bestseller</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#eaf2e6,#d0e4c8)">
+          <div class="pc-art"><span class="pca-k">헤모힘</span><span class="pca-en">HemoHIM</span><div class="pca-line" style="background:var(--sage)"></div><span class="pca-s" style="color:var(--sage)">94</span></div>
+          <div class="pc-badge b-sage">#1 Bestseller</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Immunity · Supplement</p>
           <h3 class="pc-name">HemoHIM-G</h3>
-          <p class="pc-ingr"><strong>Key actives:</strong> Angelica Sinensis · Cnidium Officinale · Paeonia Lactiflora · Polysaccharides — KRIBB Patent</p>
+          <p class="pc-ingr"><strong>Key actives:</strong> Angelica Sinensis · Cnidium Officinale · Paeonia Lactiflora — KRIBB Patent, world bestseller</p>
           <div class="pc-scores">
             <div class="ps"><div class="ps-v">96</div><div class="ps-k">Biovail.</div></div>
             <div class="ps"><div class="ps-v">94</div><div class="ps-k">Immune</div></div>
             <div class="ps"><div class="ps-v">91</div><div class="ps-k">Dosage</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">94</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/790101" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">94</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/790101" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 3 · THE FAME Set -->
       <div class="pc rv d3" data-cat="skincare">
-        <div class="pc-img" style="background:linear-gradient(135deg,#ede4f2,#ddd0ec)">
-          <img class="pc-img-face" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/06894c12-6b1d-41dc-a3d3-1ec0e4de542e/IMG_8340.jpeg" alt="THE FAME" onerror="this.parentElement.innerHTML='<div class=pc-img-placeholder><span class=glyph>페</span></div>'"/>
-          <div class="pc-badge b-new">Viral K-Beauty</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#ede4f2,#ddd0ea)">
+          <div class="pc-art"><span class="pca-k">더페임</span><span class="pca-en">THE FAME</span><div class="pca-line" style="background:#9b72c8"></div><span class="pca-s" style="color:#9b72c8">90</span></div>
+          <div class="pc-badge b-rose">Viral K-Beauty</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Glass Skin · Skincare System</p>
           <h3 class="pc-name">THE FAME Skin Care Set</h3>
-          <p class="pc-ingr"><strong>Key actives:</strong> Saccharomyces Ferment · Centella · Hyaluronic Acid · Niacinamide — Glass Skin Method</p>
+          <p class="pc-ingr"><strong>Key actives:</strong> Saccharomyces Ferment · Centella · Hyaluronic Acid · Niacinamide — Glass Skin method</p>
           <div class="pc-scores">
             <div class="ps"><div class="ps-v">89</div><div class="ps-k">Barrier</div></div>
             <div class="ps"><div class="ps-v">91</div><div class="ps-k">INCI</div></div>
             <div class="ps"><div class="ps-v">90</div><div class="ps-k">Clean</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">90</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700109" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">90</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700109" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 4 · Derma Real Cica Set -->
       <div class="pc rv d1" data-cat="skincare">
-        <div class="pc-img" style="background:linear-gradient(135deg,#e8f4ee,#d4ece0)">
-          <img class="pc-img-face" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/d75cced9-424c-4281-82e5-85173a59b03b/IMG_8339.jpeg" alt="Derma Real Cica" onerror="this.parentElement.innerHTML='<div class=pc-img-placeholder><span class=glyph>시</span></div>'"/>
-          <div class="pc-badge b-approved">Benchmark Approved</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#e6f2ec,#cce4d8)">
+          <div class="pc-art"><span class="pca-k">시카</span><span class="pca-en">Real Cica</span><div class="pca-line" style="background:var(--sage)"></div><span class="pca-s" style="color:var(--sage)">92</span></div>
+          <div class="pc-badge b-ink">Benchmark Approved</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Sensitive Skin · Soothing</p>
@@ -616,17 +495,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
             <div class="ps"><div class="ps-v">92</div><div class="ps-k">Clean</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">92</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700116" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">92</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700116" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 5 · Vitamin C 1000mg -->
       <div class="pc rv d2" data-cat="supplement">
-        <div class="pc-img" style="background:linear-gradient(135deg,#fdf5e0,#f5e4b8)">
-          <img class="pc-img-face" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/1fc597d9-a309-4562-87c2-f551db409ff2/IMG_8349.jpeg" alt="Vitamin C" onerror="this.parentElement.innerHTML='<div class=pc-img-placeholder><span class=glyph>비</span></div>'"/>
-          <div class="pc-badge b-approved">Benchmark Approved</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#fdf4dc,#f5e0a8)">
+          <div class="pc-art"><span class="pca-k">비타C</span><span class="pca-en">Vitamin C</span><div class="pca-line" style="background:#c9a050"></div><span class="pca-s" style="color:#c9a050">90</span></div>
+          <div class="pc-badge b-ink">Benchmark Approved</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Immunity · Supplement</p>
@@ -638,20 +516,16 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
             <div class="ps"><div class="ps-v">93</div><div class="ps-k">Dosage</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">90</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700121" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">90</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700121" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 6 · Fresh Sun Lotion -->
       <div class="pc rv d3" data-cat="skincare">
-        <div class="pc-img" style="background:linear-gradient(135deg,#faf4e8,#f0e8d0)">
-          <div class="pc-img-placeholder" style="background:linear-gradient(135deg,#faf4e8,#f0e8d0);flex-direction:column;gap:0.4rem">
-            <span class="glyph" style="font-size:2.5rem">☀️</span>
-            <span style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);font-weight:500">SPF50+ PA++++</span>
-          </div>
-          <div class="pc-badge b-approved">Benchmark Approved</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#faf4e4,#f0e8cc)">
+          <div class="pc-art"><span class="pca-k">선케어</span><span class="pca-en">Sun SPF50+</span><div class="pca-line"></div><span class="pca-s">92</span></div>
+          <div class="pc-badge b-ink">Benchmark Approved</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Sun Protection · Mineral UV</p>
@@ -663,91 +537,79 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
             <div class="ps"><div class="ps-v">95</div><div class="ps-k">Clean</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">92</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700133" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">92</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700133" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 7 · Absolute Ampoule Serum -->
       <div class="pc rv d1" data-cat="skincare">
-        <div class="pc-img" style="background:linear-gradient(135deg,#f8f0e0,#eee0c8)">
-          <div class="pc-img-placeholder" style="background:linear-gradient(135deg,#f8f0e0,#eee0c8)">
-            <span class="glyph">앰</span>
-          </div>
-          <div class="pc-badge b-top">Bestseller</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#f8f0dc,#eedcc4)">
+          <div class="pc-art"><span class="pca-k">앰플</span><span class="pca-en">Ampoule</span><div class="pca-line"></div><span class="pca-s">92</span></div>
+          <div class="pc-badge b-gold">Bestseller</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Anti-Aging · Concentrate</p>
           <h3 class="pc-name">Absolute Ampoule Serum</h3>
-          <p class="pc-ingr"><strong>Key actives:</strong> EGF · Peptide Complex · Niacinamide · Hyaluronic Acid — high-concentration anti-aging serum</p>
+          <p class="pc-ingr"><strong>Key actives:</strong> EGF · Peptide Complex · Niacinamide · Hyaluronic Acid — high-concentration formula</p>
           <div class="pc-scores">
             <div class="ps"><div class="ps-v">93</div><div class="ps-k">Barrier</div></div>
             <div class="ps"><div class="ps-v">90</div><div class="ps-k">INCI</div></div>
             <div class="ps"><div class="ps-v">94</div><div class="ps-k">Clean</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">92</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700253" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">92</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700253" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 8 · Biotics 10 Plus -->
       <div class="pc rv d2" data-cat="supplement">
-        <div class="pc-img" style="background:linear-gradient(135deg,#e8f0f8,#d0e0f0)">
-          <div class="pc-img-placeholder" style="background:linear-gradient(135deg,#e8f0f8,#d0e0f0)">
-            <span class="glyph">바</span>
-          </div>
-          <div class="pc-badge b-best">1,052 Likes</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#e8f0f8,#ccdcee)">
+          <div class="pc-art"><span class="pca-k">바이오틱스</span><span class="pca-en">Biotics 10</span><div class="pca-line" style="background:var(--sky)"></div><span class="pca-s" style="color:var(--sky)">89</span></div>
+          <div class="pc-badge b-sage">1,052 Likes</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Gut Health · Probiotic</p>
           <h3 class="pc-name">Biotics 10 Plus</h3>
-          <p class="pc-ingr"><strong>Key actives:</strong> 10 Lactobacillus / Bifidobacterium strains · FOS Prebiotic — 10 billion CFU, enteric coated</p>
+          <p class="pc-ingr"><strong>Key actives:</strong> 10 Lactobacillus/Bifidobacterium strains · FOS Prebiotic — 10 billion CFU, enteric coated</p>
           <div class="pc-scores">
             <div class="ps"><div class="ps-v">88</div><div class="ps-k">Biovail.</div></div>
             <div class="ps"><div class="ps-v">91</div><div class="ps-k">Immune</div></div>
             <div class="ps"><div class="ps-v">87</div><div class="ps-k">Dosage</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">89</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700160" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">89</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700160" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 9 · Protein Intensive Shampoo -->
-      <div class="pc rv d3" data-cat="body">
-        <div class="pc-img" style="background:linear-gradient(135deg,#f0eaf8,#e2d8f0)">
-          <div class="pc-img-placeholder" style="background:linear-gradient(135deg,#f0eaf8,#e2d8f0)">
-            <span class="glyph">샴</span>
-          </div>
-          <div class="pc-badge b-approved">Benchmark Approved</div>
+      <div class="pc rv d3" data-cat="supplement">
+        <div class="pc-img" style="background:linear-gradient(135deg,#f8e4e0,#f0ccc8)">
+          <div class="pc-art"><span class="pca-k">홍삼단</span><span class="pca-en">Red Ginseng</span><div class="pca-line" style="background:var(--rose)"></div><span class="pca-s" style="color:var(--rose)">89</span></div>
+          <div class="pc-badge b-sage">765 Likes</div>
         </div>
         <div class="pc-body">
-          <p class="pc-cat">Hair Care · Repair</p>
-          <h3 class="pc-name">Protein Intensive Shampoo</h3>
-          <p class="pc-ingr"><strong>Key actives:</strong> Hydrolysed Keratin · Panthenol · Silk Protein · Amino Acids — sulfate-free, strengthens hair shaft</p>
+          <p class="pc-cat">Vitality · Red Ginseng</p>
+          <h3 class="pc-name">Hongsamdan Red Ginseng</h3>
+          <p class="pc-ingr"><strong>Key actives:</strong> Panax Ginseng (Rg1, Rb1, Rg3) · Deer Antler Extract · Honey — KFDA certified, 6-year ginseng</p>
           <div class="pc-scores">
-            <div class="ps"><div class="ps-v">85</div><div class="ps-k">Barrier</div></div>
-            <div class="ps"><div class="ps-v">91</div><div class="ps-k">INCI</div></div>
-            <div class="ps"><div class="ps-v">88</div><div class="ps-k">Clean</div></div>
+            <div class="ps"><div class="ps-v">91</div><div class="ps-k">Biovail.</div></div>
+            <div class="ps"><div class="ps-v">89</div><div class="ps-k">Immune</div></div>
+            <div class="ps"><div class="ps-v">88</div><div class="ps-k">Dosage</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">88</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700666" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">89</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700107" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 10 · Inner Collagen -->
       <div class="pc rv d1" data-cat="supplement">
-        <div class="pc-img" style="background:linear-gradient(135deg,#fbeaec,#f5d0d4)">
-          <div class="pc-img-placeholder" style="background:linear-gradient(135deg,#fbeaec,#f5d0d4)">
-            <span class="glyph">콜</span>
-          </div>
-          <div class="pc-badge b-new">Trending 2025</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#fbe8ec,#f5ccd4)">
+          <div class="pc-art"><span class="pca-k">콜라겐</span><span class="pca-en">Collagen</span><div class="pca-line" style="background:var(--rose)"></div><span class="pca-s" style="color:var(--rose)">88</span></div>
+          <div class="pc-badge b-rose">Trending 2025</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Beauty From Within · Collagen</p>
@@ -759,64 +621,57 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
             <div class="ps"><div class="ps-v">90</div><div class="ps-k">Dosage</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">88</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700175" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">88</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700175" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 11 · Hongsamdan Red Ginseng -->
-      <div class="pc rv d2" data-cat="supplement">
-        <div class="pc-img" style="background:linear-gradient(135deg,#f8e8e0,#f0d0c0)">
-          <div class="pc-img-placeholder" style="background:linear-gradient(135deg,#f8e8e0,#f0d0c0)">
-            <span class="glyph">홍</span>
-          </div>
-          <div class="pc-badge b-best">765 Likes</div>
+      <div class="pc rv d2" data-cat="body">
+        <div class="pc-img" style="background:linear-gradient(135deg,#f0eaf8,#e0d4f0)">
+          <div class="pc-art"><span class="pca-k">단백질</span><span class="pca-en">Shampoo</span><div class="pca-line" style="background:#9b72c8"></div><span class="pca-s" style="color:#9b72c8">88</span></div>
+          <div class="pc-badge b-ink">Benchmark Approved</div>
         </div>
         <div class="pc-body">
-          <p class="pc-cat">Vitality · Red Ginseng</p>
-          <h3 class="pc-name">Hongsamdan Red Ginseng</h3>
-          <p class="pc-ingr"><strong>Key actives:</strong> Panax Ginseng (Rg1, Rb1, Rg3) · Deer Antler Extract · Honey — KFDA certified, 6-year Korean ginseng</p>
+          <p class="pc-cat">Hair Care · Repair</p>
+          <h3 class="pc-name">Protein Intensive Shampoo</h3>
+          <p class="pc-ingr"><strong>Key actives:</strong> Hydrolysed Keratin · Panthenol · Silk Protein · Amino Acids — sulfate-free</p>
           <div class="pc-scores">
-            <div class="ps"><div class="ps-v">91</div><div class="ps-k">Biovail.</div></div>
-            <div class="ps"><div class="ps-v">89</div><div class="ps-k">Immune</div></div>
-            <div class="ps"><div class="ps-v">88</div><div class="ps-k">Dosage</div></div>
+            <div class="ps"><div class="ps-v">85</div><div class="ps-k">Barrier</div></div>
+            <div class="ps"><div class="ps-v">91</div><div class="ps-k">INCI</div></div>
+            <div class="ps"><div class="ps-v">88</div><div class="ps-k">Clean</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">89</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700107" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">88</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700666" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-      <!-- 12 · Eye Lutein -->
       <div class="pc rv d3" data-cat="supplement">
-        <div class="pc-img" style="background:linear-gradient(135deg,#e8f4e0,#d0e8c8)">
-          <div class="pc-img-placeholder" style="background:linear-gradient(135deg,#e8f4e0,#d0e8c8)">
-            <span class="glyph">루</span>
-          </div>
-          <div class="pc-badge b-new">New 2025</div>
+        <div class="pc-img" style="background:linear-gradient(135deg,#e6f4dc,#cce8b8)">
+          <div class="pc-art"><span class="pca-k">루테인</span><span class="pca-en">Eye Lutein</span><div class="pca-line" style="background:var(--sage)"></div><span class="pca-s" style="color:var(--sage)">88</span></div>
+          <div class="pc-badge b-rose">New 2025</div>
         </div>
         <div class="pc-body">
           <p class="pc-cat">Eye Health · Supplement</p>
           <h3 class="pc-name">Eye Lutein</h3>
-          <p class="pc-ingr"><strong>Key actives:</strong> Lutein 20mg · Zeaxanthin · Bilberry Extract (Anthocyanins) · Vitamin A — screen users, blue light protection</p>
+          <p class="pc-ingr"><strong>Key actives:</strong> Lutein 20mg · Zeaxanthin · Bilberry Extract · Vitamin A — blue light & screen protection</p>
           <div class="pc-scores">
             <div class="ps"><div class="ps-v">87</div><div class="ps-k">Biovail.</div></div>
             <div class="ps"><div class="ps-v">90</div><div class="ps-k">Immune</div></div>
             <div class="ps"><div class="ps-v">88</div><div class="ps-k">Dosage</div></div>
           </div>
           <div class="pc-foot">
-            <div class="pc-total"><span class="pc-total-n">88</span><span class="pc-total-m">/100</span></div>
-            <a href="https://eu.atomy.com/product/700173" target="_blank" class="pc-link">View on Atomy <span class="pc-link-arrow">→</span></a>
+            <div class="pc-tot"><span class="pc-tot-n">88</span><span class="pc-tot-m">/100</span></div>
+            <a href="https://eu.atomy.com/product/700173" target="_blank" class="pc-link">Atomy EU →</a>
           </div>
         </div>
       </div>
 
-    </div><!-- /prod-grid -->
-
-    <div style="text-align:center;margin-top:3rem" class="rv">
-      <a href="https://eu.atomy.com" target="_blank" class="btn-outline">View All 21 Analysed Products on Atomy EU →</a>
+    </div>
+    <div style="text-align:center;margin-top:2.8rem" class="rv">
+      <a href="https://eu.atomy.com" target="_blank" class="btn-line">View All 21 Analysed Products on Atomy EU →</a>
     </div>
   </div>
 </section>
@@ -824,100 +679,58 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
 <!-- ANALYSES -->
 <section id="analyses" class="analyses">
   <div class="si">
-    <div class="an-grid">
+    <div class="an-wrap">
       <div class="rvl">
-        <p class="sl">HanGlanz Benchmark System</p>
-        <h2 class="st">Scientific <em>Analyses</em><br>for every product type</h2>
-        <p class="sb">Each product undergoes our multi-dimensional scoring system — different dimensions per category, always science-backed and independently assessed.</p>
+        <p class="lbl">HanGlanz Benchmark System</p>
+        <h2 class="h2">Scientific <em>Analyses</em><br>for every product type</h2>
+        <p class="body-t">Each product undergoes our multi-dimensional scoring system — different dimensions per category, always science-backed and independently assessed.</p>
         <div class="an-steps">
-          <div class="as-step rv d1">
-            <div class="as-n"><span>01</span></div>
-            <div>
-              <div class="as-title">INCI Database Cross-Reference</div>
-              <div class="as-desc">Every ingredient is matched against scientific databases and evaluated for efficacy, safety, and skin compatibility.</div>
-            </div>
-          </div>
-          <div class="as-step rv d2">
-            <div class="as-n"><span>02</span></div>
-            <div>
-              <div class="as-title">Category-Specific Scoring</div>
-              <div class="as-desc">Cosmetics: Skin Barrier, INCI Transparency, Clean Beauty. Supplements: Bioavailability, Immune Impact, Clinical Dosage.</div>
-            </div>
-          </div>
-          <div class="as-step rv d3">
-            <div class="as-n"><span>03</span></div>
-            <div>
-              <div class="as-title">Benchmark Certification</div>
-              <div class="as-desc">Products scoring ≥ 80 receive the HanGlanz Benchmark Approved seal — our quality guarantee for DACH consumers.</div>
-            </div>
-          </div>
-          <div class="as-step rv d4">
-            <div class="as-n"><span>04</span></div>
-            <div>
-              <div class="as-title">Market Comparison</div>
-              <div class="as-desc">Scores are benchmarked against DACH market averages to provide genuine context and comparative value.</div>
-            </div>
-          </div>
+          <div class="as-step rv d1"><div class="as-num"><span>01</span></div><div><div class="as-t">INCI Database Cross-Reference</div><div class="as-d">Every ingredient matched against scientific databases — evaluated for efficacy, safety, and skin compatibility.</div></div></div>
+          <div class="as-step rv d2"><div class="as-num"><span>02</span></div><div><div class="as-t">Category-Specific Scoring</div><div class="as-d">Cosmetics: Skin Barrier, INCI Transparency, Clean Beauty. Supplements: Bioavailability, Immune Impact, Clinical Dosage.</div></div></div>
+          <div class="as-step rv d3"><div class="as-num"><span>03</span></div><div><div class="as-t">Benchmark Certification</div><div class="as-d">Products scoring ≥ 80 receive the HanGlanz Benchmark Approved seal.</div></div></div>
+          <div class="as-step rv d4"><div class="as-num"><span>04</span></div><div><div class="as-t">Market Comparison</div><div class="as-d">Scores benchmarked against DACH market averages — genuine context for consumers.</div></div></div>
         </div>
       </div>
       <div class="rvr">
-        <div class="an-face-wrap">
-          <img class="an-face" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/24056bff-b313-40eb-9710-026c54c1c568/A628EB3C-EB50-42DA-8CDB-D260113E5D10.jpeg" alt="HanGlanz Analysis" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#f5eadd,#e8dff0)'"/>
-          <div class="an-face-overlay"></div>
-          <div class="an-face-card">
-            <div class="afc-title">Live Analysis · Absolute CellActive Set</div>
-            <div class="afc-bars">
-              <div class="afc-row">
-                <div class="afc-label">Skin Barrier</div>
-                <div class="afc-track"><div class="afc-fill fc1" data-w="94" style="width:0%"></div></div>
-                <div class="afc-val">94</div>
-              </div>
-              <div class="afc-row">
-                <div class="afc-label">INCI Transparency</div>
-                <div class="afc-track"><div class="afc-fill fc2" data-w="91" style="width:0%"></div></div>
-                <div class="afc-val">91</div>
-              </div>
-              <div class="afc-row">
-                <div class="afc-label">Clean Beauty</div>
-                <div class="afc-track"><div class="afc-fill fc3" data-w="96" style="width:0%"></div></div>
-                <div class="afc-val">96</div>
-              </div>
-              <div class="afc-row">
-                <div class="afc-label">Market Average</div>
-                <div class="afc-track"><div class="afc-fill fc4" data-w="61" style="width:0%"></div></div>
-                <div class="afc-val">61</div>
-              </div>
+        <div class="an-panel">
+          <!--
+          ADD ANALYSIS IMAGE:
+          <img src="images/analysis.jpg"
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top"/>
+          -->
+          <div class="an-panel-art"><span class="an-glyph">韓</span><span class="an-glabel">Ingredient Analysis</span></div>
+          <div class="an-overlay"></div>
+          <div class="an-card">
+            <div class="ac-title">Live Analysis · Absolute CellActive Set</div>
+            <div class="ac-bars">
+              <div class="ac-row"><div class="ac-lbl">Skin Barrier</div><div class="ac-track"><div class="ac-fill f1" data-w="94"></div></div><div class="ac-val">94</div></div>
+              <div class="ac-row"><div class="ac-lbl">INCI Transparency</div><div class="ac-track"><div class="ac-fill f2" data-w="91"></div></div><div class="ac-val">91</div></div>
+              <div class="ac-row"><div class="ac-lbl">Clean Beauty</div><div class="ac-track"><div class="ac-fill f3" data-w="96"></div></div><div class="ac-val">96</div></div>
+              <div class="ac-row"><div class="ac-lbl">Market Average</div><div class="ac-track"><div class="ac-fill f4" data-w="61"></div></div><div class="ac-val">61</div></div>
             </div>
-            <div class="afc-total">
-              <div class="afc-total-n">94</div>
-              <div class="afc-total-s">/ 100 overall score</div>
-            </div>
+            <div class="ac-total"><div class="ac-tot-n">94</div><div class="ac-tot-s">/ 100 overall score</div></div>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="an-chart-wrap rv">
+      <div style="margin-bottom:1.5rem"><p class="lbl">Interactive Score Visualisation</p><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--ink)">Multi-Dimensional <em style="color:var(--gold);font-style:italic">Radar Score</em></h3></div>
+      <div class="an-chart-inner">
+        <div>
+          <p style="font-size:.86rem;font-weight:300;color:var(--mid);line-height:1.95;margin-bottom:1.4rem">Five scientific dimensions. One clear number. This is what real ingredient intelligence looks like versus the DACH market average.</p>
+          <div class="acl-row"><div class="acl-dot" style="background:var(--gold)"></div>Absolute CellActive Set — 93.2 / 100</div>
+          <div class="acl-row"><div class="acl-dot" style="background:var(--sage)"></div>DACH Market Average — 60.4 / 100</div>
+        </div>
+        <div class="an-chart-box"><canvas id="radarChart" style="max-height:300px"></canvas></div>
+      </div>
+    </div>
+
     <div class="an-dims rv">
-      <div class="ad">
-        <div class="ad-icon">🔬</div>
-        <div class="ad-title">Skin Barrier Score</div>
-        <div class="ad-desc">Measures protection and strengthening of the skin barrier through ceramides, peptides, and lipids.</div>
-      </div>
-      <div class="ad">
-        <div class="ad-icon">📋</div>
-        <div class="ad-title">INCI Transparency</div>
-        <div class="ad-desc">Evaluates the completeness and clarity of the ingredient list according to EU regulation.</div>
-      </div>
-      <div class="ad">
-        <div class="ad-icon">🌿</div>
-        <div class="ad-title">Clean Beauty Index</div>
-        <div class="ad-desc">Checks the absence of parabens, silicones, synthetic fragrances, and questionable preservatives.</div>
-      </div>
-      <div class="ad">
-        <div class="ad-icon">💊</div>
-        <div class="ad-title">Bioavailability Score</div>
-        <div class="ad-desc">For supplements: absorption rate and active ingredient quality measured against clinical dosage standards.</div>
-      </div>
+      <div class="ad"><div class="ad-icon">🔬</div><div class="ad-t">Skin Barrier Score</div><div class="ad-d">Measures barrier protection via ceramides, peptides, and lipids.</div></div>
+      <div class="ad"><div class="ad-icon">📋</div><div class="ad-t">INCI Transparency</div><div class="ad-d">Evaluates ingredient list completeness and clarity per EU regulation.</div></div>
+      <div class="ad"><div class="ad-icon">🌿</div><div class="ad-t">Clean Beauty Index</div><div class="ad-d">Checks for parabens, silicones, synthetic fragrances, questionable preservatives.</div></div>
+      <div class="ad"><div class="ad-icon">💊</div><div class="ad-t">Bioavailability Score</div><div class="ad-d">For supplements: absorption rate vs. clinical dosage standards.</div></div>
     </div>
   </div>
 </section>
@@ -925,90 +738,37 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
 <!-- COMPARISON -->
 <section id="comparison" class="compare">
   <div class="si">
-    <div class="cmp-top">
-      <div class="rvl">
-        <div class="cmp-face-wrap">
-          <img class="cmp-face" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/f1e60154-13ee-4c55-a8d9-957739d7dde3/IMG_8338.png" alt="Product Comparison" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#f0e4d4,#e4daf0)'"/>
-          <div class="cmp-face-overlay"></div>
-          <div class="cmp-face-quote">
-            <div class="cfq-text">"We don't just compare prices — we compare efficacy, safety, and transparency."</div>
-            <div class="cfq-attr">HanGlanz Global · Benchmark Methodology</div>
-          </div>
-        </div>
-      </div>
-      <div class="rvr">
-        <p class="sl">Product Comparison</p>
-        <h2 class="st">Products in <em>direct comparison</em><br>vs. DACH market</h2>
-        <p class="sb" style="margin-bottom:1.5rem">Our benchmark data places Atomy products directly alongside DACH market averages — creating real transparency on what makes them different.</p>
-        <p class="sb">The criteria that actually matter for your skin health: skin barrier protection, INCI transparency, and clean ingredient formulation.</p>
-        <br/>
-        <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="btn-outline" style="display:inline-block;margin-top:1rem">See Comparisons on Instagram →</a>
-      </div>
+    <div class="rvl">
+      <p class="lbl">Product Comparison</p>
+      <h2 class="h2">Atomy vs. <em>DACH Market Average</em></h2>
+      <p class="body-t">Real transparency. Every score is independently assessed — not supplied by the brand.</p>
     </div>
-
     <div class="rv">
       <div class="cmp-table-wrap">
         <table class="cmp-table">
           <thead>
             <tr>
               <th>Criterion</th>
-              <th>Absolute CellActive Set<br><span style="font-size:0.58rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--gold)">Benchmark Approved ✦</span></th>
-              <th>Derma Real Cica Set<br><span style="font-size:0.58rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--gold)">Benchmark Approved ✦</span></th>
-              <th>HemoHIM-G<br><span style="font-size:0.58rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--gold)">Benchmark Approved ✦</span></th>
-              <th>DACH Market Avg.<br><span style="font-size:0.58rem;text-transform:none;letter-spacing:0;font-weight:400;opacity:0.5">Reference</span></th>
+              <th>Absolute CellActive<br><span style="font-size:.56rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--gold)">Approved ✦</span></th>
+              <th>Derma Real Cica<br><span style="font-size:.56rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--gold)">Approved ✦</span></th>
+              <th>HemoHIM-G<br><span style="font-size:.56rem;text-transform:none;letter-spacing:0;font-weight:400;color:var(--gold)">Approved ✦</span></th>
+              <th>DACH Market</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Skin Barrier</td>
-              <td><span class="sp sh">94 / 100</span> <span class="cmp-winner">Best</span></td>
-              <td><span class="sp sh">91 / 100</span></td>
-              <td><span style="font-size:0.75rem;color:var(--muted)">N/A — Supplement</span></td>
-              <td><span class="sp sl2">58 / 100</span></td>
-            </tr>
-            <tr>
-              <td>INCI Transparency</td>
-              <td><span class="sp sh">91 / 100</span></td>
-              <td><span class="sp sh">94 / 100</span> <span class="cmp-winner">Best</span></td>
-              <td><span style="font-size:0.75rem;color:var(--muted)">N/A — Supplement</span></td>
-              <td><span class="sp sl2">52 / 100</span></td>
-            </tr>
-            <tr>
-              <td>Clean Beauty</td>
-              <td><span class="sp sh">96 / 100</span> <span class="cmp-winner">Best</span></td>
-              <td><span class="sp sh">92 / 100</span></td>
-              <td><span style="font-size:0.75rem;color:var(--muted)">N/A — Supplement</span></td>
-              <td><span class="sp sm">63 / 100</span></td>
-            </tr>
-            <tr>
-              <td>Bioavailability</td>
-              <td><span style="font-size:0.75rem;color:var(--muted)">N/A — Cosmetic</span></td>
-              <td><span style="font-size:0.75rem;color:var(--muted)">N/A — Cosmetic</span></td>
-              <td><span class="sp sh">96 / 100</span> <span class="cmp-winner">Best</span></td>
-              <td><span class="sp sm">64 / 100</span></td>
-            </tr>
-            <tr>
-              <td>Clinical Dosage</td>
-              <td><span style="font-size:0.75rem;color:var(--muted)">N/A — Cosmetic</span></td>
-              <td><span style="font-size:0.75rem;color:var(--muted)">N/A — Cosmetic</span></td>
-              <td><span class="sp sh">91 / 100</span> <span class="cmp-winner">Best</span></td>
-              <td><span class="sp sl2">55 / 100</span></td>
-            </tr>
-            <tr>
-              <td>HanGlanz Overall</td>
-              <td><span class="sp sh">94 / 100</span></td>
-              <td><span class="sp sh">92 / 100</span></td>
-              <td><span class="sp sh">94 / 100</span></td>
-              <td><span class="sp sl2">58 / 100</span></td>
-            </tr>
+            <tr><td>Skin Barrier</td><td><span class="sp sh">94 / 100</span><span class="win">Best</span></td><td><span class="sp sh">91 / 100</span></td><td><span style="font-size:.72rem;color:var(--muted)">—</span></td><td><span class="sp sl2">58 / 100</span></td></tr>
+            <tr><td>INCI Transparency</td><td><span class="sp sh">91 / 100</span></td><td><span class="sp sh">94 / 100</span><span class="win">Best</span></td><td><span style="font-size:.72rem;color:var(--muted)">—</span></td><td><span class="sp sl2">52 / 100</span></td></tr>
+            <tr><td>Clean Beauty</td><td><span class="sp sh">96 / 100</span><span class="win">Best</span></td><td><span class="sp sh">92 / 100</span></td><td><span style="font-size:.72rem;color:var(--muted)">—</span></td><td><span class="sp sm">63 / 100</span></td></tr>
+            <tr><td>Bioavailability</td><td><span style="font-size:.72rem;color:var(--muted)">—</span></td><td><span style="font-size:.72rem;color:var(--muted)">—</span></td><td><span class="sp sh">96 / 100</span><span class="win">Best</span></td><td><span class="sp sm">64 / 100</span></td></tr>
+            <tr><td>HanGlanz Overall</td><td><span class="sp sh">94 / 100</span></td><td><span class="sp sh">92 / 100</span></td><td><span class="sp sh">94 / 100</span></td><td><span class="sp sl2">58 / 100</span></td></tr>
           </tbody>
         </table>
       </div>
       <div class="cmp-legend">
-        <div class="cl-item"><div class="cl-dot" style="background:#2e6e48"></div>Score ≥ 80 = Benchmark Approved</div>
-        <div class="cl-item"><div class="cl-dot" style="background:#7a5c18"></div>Score 60–79 = Market Average</div>
-        <div class="cl-item"><div class="cl-dot" style="background:#7a2828"></div>Score &lt; 60 = Below Standard</div>
-        <div class="cl-item" style="margin-left:auto;font-size:0.65rem">✦ Source: HanGlanz Benchmark System 2025</div>
+        <div class="cl"><div class="cl-dot" style="background:#2a6844"></div>≥ 80 = Benchmark Approved</div>
+        <div class="cl"><div class="cl-dot" style="background:#7a5c18"></div>60–79 = Market Average</div>
+        <div class="cl"><div class="cl-dot" style="background:#7a2828"></div>&lt; 60 = Below Standard</div>
+        <div class="cl" style="margin-left:auto;font-size:.62rem">✦ HanGlanz Benchmark System 2025</div>
       </div>
     </div>
   </div>
@@ -1017,9 +777,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
 <!-- STATS -->
 <section class="stats">
   <div class="stats-row">
-    <div class="stc rv"><div class="stc-n gold">21</div><div class="stc-l">Analysed Atomy Products</div></div>
+    <div class="stc rv"><div class="stc-n g">21</div><div class="stc-l">Analysed Atomy Products</div></div>
     <div class="stc rv d1"><div class="stc-n">100</div><div class="stc-l">Point Benchmark System</div></div>
-    <div class="stc rv d2"><div class="stc-n gold">3×</div><div class="stc-l">Scoring Dimensions</div></div>
+    <div class="stc rv d2"><div class="stc-n g">3×</div><div class="stc-l">Scoring Dimensions</div></div>
     <div class="stc rv d3"><div class="stc-n">DACH</div><div class="stc-l">Primary Market · English</div></div>
   </div>
 </section>
@@ -1027,31 +787,12 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
 <!-- METHOD -->
 <section id="method" class="method">
   <div class="si">
-    <div class="method-hd rv">
-      <p class="sl">The Method</p>
-      <h2 class="st">How <em>HanGlanz</em> works</h2>
-    </div>
+    <div class="method-hd rv"><p class="lbl">The Method</p><h2 class="h2">How <em>HanGlanz</em> works</h2></div>
     <div class="method-steps">
-      <div class="ms rv d1">
-        <div class="ms-n">01</div>
-        <div class="ms-t">Ingredient Analysis</div>
-        <p class="ms-b">Every active is cross-referenced against scientific databases — rated for efficacy, safety, and skin compatibility. No guesswork.</p>
-      </div>
-      <div class="ms rv d2">
-        <div class="ms-n">02</div>
-        <div class="ms-t">Benchmark Scoring</div>
-        <p class="ms-b">Products receive a multi-dimensional score via the HanGlanz Benchmark System — category-specific, always independently assessed.</p>
-      </div>
-      <div class="ms rv d3">
-        <div class="ms-n">03</div>
-        <div class="ms-t">Market Benchmarking</div>
-        <p class="ms-b">Atomy products are placed directly against DACH market averages — giving consumers the context they need to decide with confidence.</p>
-      </div>
-      <div class="ms rv d4">
-        <div class="ms-n">04</div>
-        <div class="ms-t">Certification & Content</div>
-        <p class="ms-b">Approved products receive the HanGlanz seal. Results are published on Instagram and Notion — in English, for the DACH community.</p>
-      </div>
+      <div class="ms rv d1"><div class="ms-n">01</div><div class="ms-t">Ingredient Analysis</div><p class="ms-b">Every active cross-referenced against scientific databases — rated for efficacy, safety, and compatibility. No guesswork.</p></div>
+      <div class="ms rv d2"><div class="ms-n">02</div><div class="ms-t">Benchmark Scoring</div><p class="ms-b">Products receive a multi-dimensional score — category-specific, always independently assessed.</p></div>
+      <div class="ms rv d3"><div class="ms-n">03</div><div class="ms-t">Market Benchmarking</div><p class="ms-b">Atomy products placed directly against DACH market averages — giving consumers genuine context.</p></div>
+      <div class="ms rv d4"><div class="ms-n">04</div><div class="ms-t">Certification & Content</div><p class="ms-b">Approved products receive the HanGlanz seal. Results published on Instagram and Notion.</p></div>
     </div>
   </div>
 </section>
@@ -1061,27 +802,29 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
   <div class="si">
     <div class="about-grid">
       <div class="rvl">
-        <div class="about-face-wrap">
-          <img class="about-face" src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/24056bff-b313-40eb-9710-026c54c1c568/A628EB3C-EB50-42DA-8CDB-D260113E5D10.jpeg" alt="HanGlanz Ambassador" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#f5eadd,#e8dff0)'"/>
-          <div class="about-face-caption">
-            <div class="afc2-label">HanGlanz Global</div>
-            <div class="afc2-name">Ingredient Intelligence for DACH</div>
+        <div class="about-panel">
+          <!--
+          ADD BRAND IMAGE:
+          <img src="images/brand.jpg"
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top"/>
+          -->
+          <div class="about-art">
+            <div class="about-art-inner"><span class="aai-glyph">韓</span><span class="aai-t">HanGlanz Global</span></div>
           </div>
+          <div class="about-caption"><div class="acp-l">HanGlanz Global</div><div class="acp-n">Ingredient Intelligence for DACH</div></div>
         </div>
       </div>
       <div class="rvr">
-        <div class="about-content">
-          <p class="sl">Who We Are</p>
-          <h2 class="st">Ingredient clarity.<br><em>Korean precision.</em></h2>
-          <p class="sb">HanGlanz Global brings the transparency of Korea's leading beauty intelligence platforms to the DACH market. Inspired by Hwahae's data-first approach, we translate complex ingredient lists into clear, actionable scores.</p>
-          <br/>
-          <p class="sb">Based in Düsseldorf, we benchmark Atomy products, track K-beauty trends, and educate a German-speaking audience that deserves better than marketing claims — with a focus on the ingredients that genuinely deliver results.</p>
-          <div class="about-features">
-            <div class="af2"><div class="af2-t">0–100 Ingredient Scoring</div><div class="af2-d">Science-backed scores modelled on Korea's leading platforms.</div></div>
-            <div class="af2"><div class="af2-t">DACH-First Approach</div><div class="af2-d">Content crafted for a market underserved by K-beauty tools.</div></div>
-            <div class="af2"><div class="af2-t">Brand Intelligence</div><div class="af2-d">Detailed benchmarks comparing products across categories.</div></div>
-            <div class="af2"><div class="af2-t">Trend Tracking</div><div class="af2-d">We monitor what's emerging in Korea before it hits European shelves.</div></div>
-          </div>
+        <p class="lbl">Who We Are</p>
+        <h2 class="h2">Ingredient clarity.<br><em>Korean precision.</em></h2>
+        <p class="body-t">HanGlanz Global brings the transparency of Korea's leading beauty intelligence platforms to the DACH market — translating complex ingredient lists into clear, actionable scores.</p>
+        <br/>
+        <p class="body-t">Based in Düsseldorf, we benchmark Atomy products, track K-beauty trends, and educate German-speaking consumers who deserve more than marketing claims.</p>
+        <div class="about-features">
+          <div class="af"><div class="af-t">0–100 Ingredient Scoring</div><div class="af-d">Science-backed, modelled on Korea's leading platforms.</div></div>
+          <div class="af"><div class="af-t">DACH-First Approach</div><div class="af-d">A market underserved by K-beauty intelligence tools.</div></div>
+          <div class="af"><div class="af-t">Brand Intelligence</div><div class="af-d">Benchmarks comparing products across categories.</div></div>
+          <div class="af"><div class="af-t">Trend Tracking</div><div class="af-d">We monitor Korea before it hits European shelves.</div></div>
         </div>
       </div>
     </div>
@@ -1090,57 +833,43 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
 
 <!-- INSTAGRAM -->
 <section class="igram">
-  <div class="ig-inner">
+  <div class="ig-wrap">
     <div class="rvl">
-      <p class="sl">Follow Our Work</p>
-      <h2 class="st">Weekly <em>K-Beauty</em><br>Intelligence on Instagram</h2>
-      <p class="sb">Follow @hanglanzglobal for weekly ingredient analyses, benchmark scores, and K-beauty insights — published in English for the DACH community.</p>
+      <p class="lbl">Follow Our Work</p>
+      <h2 class="h2">Weekly <em>K-Beauty</em><br>Intelligence</h2>
+      <p class="body-t">Follow @hanglanzglobal for ingredient analyses, benchmark scores, and K-beauty insights — published for the DACH community.</p>
       <br/><br/>
-      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="btn-solid">Follow @hanglanzglobal</a>
+      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="btn-dark">Follow @hanglanzglobal</a>
     </div>
-    <div class="ig-posts rvr">
-      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp">
-        <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/24056bff-b313-40eb-9710-026c54c1c568/A628EB3C-EB50-42DA-8CDB-D260113E5D10.jpeg" alt="Instagram" onerror="this.parentElement.innerHTML='<div class=igp-placeholder><span class=g>✦</span></div>'"/>
-        <div class="igp-ov"><span>Instagram</span></div>
-      </a>
-      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp">
-        <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/f1e60154-13ee-4c55-a8d9-957739d7dde3/IMG_8338.png" alt="Instagram" onerror="this.parentElement.innerHTML='<div class=igp-placeholder><span class=g>✦</span></div>'"/>
-        <div class="igp-ov"><span>Instagram</span></div>
-      </a>
-      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp">
-        <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/06894c12-6b1d-41dc-a3d3-1ec0e4de542e/IMG_8340.jpeg" alt="Instagram" onerror="this.parentElement.innerHTML='<div class=igp-placeholder><span class=g>✦</span></div>'"/>
-        <div class="igp-ov"><span>Instagram</span></div>
-      </a>
-      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp">
-        <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/d75cced9-424c-4281-82e5-85173a59b03b/IMG_8339.jpeg" alt="Instagram" onerror="this.parentElement.innerHTML='<div class=igp-placeholder><span class=g>✦</span></div>'"/>
-        <div class="igp-ov"><span>Instagram</span></div>
-      </a>
-      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp">
-        <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/97e6fd67-5581-4dbe-9864-f6a41b1b7c6c/1fc597d9-a309-4562-87c2-f551db409ff2/IMG_8349.jpeg" alt="Instagram" onerror="this.parentElement.innerHTML='<div class=igp-placeholder><span class=g>✦</span></div>'"/>
-        <div class="igp-ov"><span>Instagram</span></div>
-      </a>
-      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp" style="background:linear-gradient(135deg,var(--warm),var(--goldlight))">
-        <div class="igp-placeholder"><span class="g">韓</span></div>
-        <div class="igp-ov"><span>Instagram</span></div>
-      </a>
+    <div class="ig-grid rvr">
+      <!--
+      ADD INSTAGRAM PHOTOS:
+      Upload images to /images/ then inside each .igp replace igp-art with:
+      <img src="images/post1.jpg" style="width:100%;height:100%;object-fit:cover"/>
+      -->
+      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp" style="background:linear-gradient(135deg,#f5ead8,#e8d5b8)"><div class="igp-art"><span class="igp-k">세포</span><span class="igp-en">CellActive</span></div><div class="igp-ov"><span>View</span></div></a>
+      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp" style="background:linear-gradient(135deg,#eaf2e6,#d0e4c8)"><div class="igp-art"><span class="igp-k">헤모</span><span class="igp-en">HemoHIM</span></div><div class="igp-ov"><span>View</span></div></a>
+      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp" style="background:linear-gradient(135deg,#ede4f2,#ddd0ea)"><div class="igp-art"><span class="igp-k">페임</span><span class="igp-en">THE FAME</span></div><div class="igp-ov"><span>View</span></div></a>
+      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp" style="background:linear-gradient(135deg,#fdf4dc,#f5e0a8)"><div class="igp-art"><span class="igp-k">비타C</span><span class="igp-en">Vitamin C</span></div><div class="igp-ov"><span>View</span></div></a>
+      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp" style="background:linear-gradient(135deg,#e6f2ec,#cce4d8)"><div class="igp-art"><span class="igp-k">시카</span><span class="igp-en">Real Cica</span></div><div class="igp-ov"><span>View</span></div></a>
+      <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="igp" style="background:linear-gradient(135deg,#f3ede4,#e8d8be)"><div class="igp-art"><span class="igp-k">韓光</span><span class="igp-en">HanGlanz</span></div><div class="igp-ov"><span>View</span></div></a>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section id="contact" class="cta-final">
-  <div class="cta-final-inner">
-    <p class="sl rv">Ready to explore?</p>
+<!-- CTA -->
+<section id="contact" class="cta">
+  <div class="cta-in">
+    <p class="lbl rv">Ready to explore?</p>
     <div class="cta-div rv"><div class="cta-div-line"></div><div class="cta-div-diamond"></div><div class="cta-div-line"></div></div>
-    <h2 class="st rv">Discover <em>K-Beauty<br>Intelligence.</em></h2>
-    <p class="sb rv">Whether you're a brand, retailer, or curious consumer — we'd love to hear from you.</p>
-    <div class="cta-acts rv d1">
+    <h2 class="h2 rv">Discover <em>K-Beauty<br>Intelligence.</em></h2>
+    <p class="body-t rv">Whether you're a brand, retailer, or curious consumer — we'd love to hear from you.</p>
+    <div class="cta-btns rv d1">
       <a href="mailto:hanglanzglobal@gmail.com" class="btn-gold">hanglanzglobal@gmail.com</a>
       <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="btn-ghost">@hanglanzglobal</a>
     </div>
   </div>
 </section>
-
 </main>
 
 <footer>
@@ -1157,44 +886,56 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.04);padding
   <p class="f-copy">© 2025 HanGlanz Global · Düsseldorf, Germany</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-// Scroll reveal
-const els = document.querySelectorAll('.rv,.rvl,.rvr');
-const io = new IntersectionObserver((entries) => {
+const io = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      const el = e.target;
-      const delay = el.classList.contains('d1') ? 80 : el.classList.contains('d2') ? 160 :
-                    el.classList.contains('d3') ? 240 : el.classList.contains('d4') ? 320 :
-                    el.classList.contains('d5') ? 400 : 0;
-      setTimeout(() => el.classList.add('in'), delay);
-      io.unobserve(el);
-    }
+    if (!e.isIntersecting) return;
+    const d = e.target.classList.contains('d1') ? 80 : e.target.classList.contains('d2') ? 160 : e.target.classList.contains('d3') ? 240 : e.target.classList.contains('d4') ? 320 : 0;
+    setTimeout(() => e.target.classList.add('in'), d);
+    io.unobserve(e.target);
   });
 }, { threshold: 0.07 });
-els.forEach(el => io.observe(el));
+document.querySelectorAll('.rv,.rvl,.rvr').forEach(el => io.observe(el));
 
-// Animate analysis bars
-const barIO = new IntersectionObserver((entries) => {
+const barIO = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.querySelectorAll('.afc-fill[data-w]').forEach(b => {
-        setTimeout(() => { b.style.width = b.dataset.w + '%'; }, 350);
-      });
-      barIO.unobserve(e.target);
-    }
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.ac-fill[data-w]').forEach(b => { setTimeout(() => { b.style.width = b.dataset.w + '%'; }, 400); });
+    barIO.unobserve(e.target);
   });
-}, { threshold: 0.4 });
-const bcard = document.querySelector('.an-face-card');
-if (bcard) barIO.observe(bcard);
+}, { threshold: 0.35 });
+const ac = document.querySelector('.an-card');
+if (ac) barIO.observe(ac);
 
-// Product filter
-function filter(cat, btn) {
+function filterProd(cat, btn) {
   document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
-  document.querySelectorAll('.pc').forEach(c => {
-    const show = cat === 'all' || c.dataset.cat === cat;
-    c.style.display = show ? 'flex' : 'none';
+  document.querySelectorAll('.pc').forEach(c => { c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'flex' : 'none'; });
+}
+
+const ctx = document.getElementById('radarChart');
+if (ctx) {
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Barrier Repair','INCI Transparency','Clean Beauty','Clinical Evidence','Skin Compatibility'],
+      datasets: [
+        { label: 'Absolute CellActive', data: [94,91,96,92,93], borderColor:'#b5915a', backgroundColor:'rgba(181,145,90,0.1)', borderWidth:2, pointBackgroundColor:'#b5915a', pointRadius:4, pointHoverRadius:6 },
+        { label: 'DACH Market Average', data: [58,52,63,61,68], borderColor:'#6d9a7e', backgroundColor:'rgba(109,154,126,0.07)', borderWidth:2, borderDash:[4,4], pointBackgroundColor:'#6d9a7e', pointRadius:3, pointHoverRadius:5 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      animation: { duration:1200, easing:'easeInOutQuart' },
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor:'rgba(12,11,9,0.9)', titleColor:'#b5915a', bodyColor:'rgba(255,255,255,0.72)', titleFont:{family:"'Cormorant Garamond',serif",size:13}, bodyFont:{family:"'Jost',sans-serif",size:11,weight:'300'}, padding:10, cornerRadius:5 }
+      },
+      scales: {
+        r: { beginAtZero:true, max:100, ticks:{stepSize:25,color:'#9a948e',font:{family:"'Jost',sans-serif",size:9},backdropColor:'transparent'}, pointLabels:{color:'#6a6460',font:{family:"'Jost',sans-serif",size:10,weight:'500'}}, grid:{color:'rgba(230,224,216,0.65)'}, angleLines:{color:'rgba(230,224,216,0.5)'} }
+      }
+    }
   });
 }
 </script>
