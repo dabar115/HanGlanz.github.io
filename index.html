@@ -4,7 +4,19 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
 <title>HanGlanz Global — K-Beauty Ingredient Intelligence</title>
-<meta name="description" content="HanGlanz Global analyses Korean beauty and wellness products with scientific ingredient scoring for the DACH market."/>
+<meta name="description" content="HanGlanz Global independently benchmarks Korean beauty and wellness products with transparent ingredient scoring for the DACH market."/>
+
+<!-- Open Graph / social preview (Instagram link-in-bio, WhatsApp, etc.) -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="HanGlanz Global — K-Beauty Benchmark Authority"/>
+<meta property="og:description" content="Independent ingredient scoring & Benchmark Approved™ Korean skincare for the DACH region. Science. Transparency. Real results."/>
+<meta property="og:image" content="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/topkoreansuncream-product-comparision.png"/>
+<meta property="og:url" content="https://dabar115.github.io/HanGlanz.github.io/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="HanGlanz Global — K-Beauty Benchmark Authority"/>
+<meta name="twitter:description" content="Independent ingredient scoring & Benchmark Approved™ Korean skincare for the DACH region."/>
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/topkoreansuncream-product-comparision.png"/>
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
@@ -30,9 +42,9 @@ body{font-family:var(--sans);background:var(--white);color:var(--ink);-webkit-fo
 .ti-sep{width:3px;height:3px;border-radius:50%;background:rgba(181,145,90,.4);flex-shrink:0}
 
 /* NAV */
-nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;flex-shrink:0}
-.nav-logo{height:27px;width:auto;object-fit:contain;border-radius:2px}
+.nav-logo{height:30px;width:auto;object-fit:contain;border-radius:3px}
 .nav-name{font-family:var(--serif);font-size:1rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
 .nav-tabs{display:flex;list-style:none;height:var(--nav);align-items:stretch}
 .nav-tabs li{display:flex}
@@ -62,30 +74,35 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
 
 /* ── PAGE 1: HOME ── */
 #page-home{background:var(--white)}
-.home-hero{display:grid;grid-template-columns:1fr 1fr;height:calc(100% - 76px)}
-.hh-left{display:flex;flex-direction:column;justify-content:center;padding:5vh 5vw 5vh 5vw;background:var(--white)}
+.home-hero{display:grid;grid-template-columns:1fr 1fr;height:calc(100% - 120px)}
+.hh-left{display:flex;flex-direction:column;justify-content:center;padding:4vh 5vw;background:var(--white)}
 .hh-right{position:relative;overflow:hidden;background:var(--cream)}
-.hh-right-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.hh-badge{position:absolute;bottom:2.2rem;left:1.8rem;background:rgba(14,13,11,.93);backdrop-filter:blur(18px);border:1px solid rgba(181,145,90,.3);border-radius:var(--r);padding:1.2rem 1.5rem}
+.hh-right-media{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hh-badge{position:absolute;bottom:2.2rem;left:1.8rem;background:rgba(14,13,11,.93);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(181,145,90,.3);border-radius:var(--r);padding:1.2rem 1.5rem;z-index:2}
 .hb-lbl{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem}
 .hb-score{font-family:var(--serif);font-size:2.8rem;font-weight:300;color:var(--white);line-height:1}
-.hb-sub{font-size:.57rem;color:rgba(255,255,255,.28);letter-spacing:.08em;text-transform:uppercase;margin-top:.28rem}
-.hh-eye{font-size:.61rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.8rem;margin-bottom:1.8rem}
+.hb-sub{font-size:.57rem;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;margin-top:.28rem}
+.hh-eye{font-size:.61rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem}
 .hh-eye::before{content:'';width:20px;height:1px;background:var(--goldpale)}
-.hh-h1{font-family:var(--serif);font-size:clamp(2.6rem,4vw,4.8rem);font-weight:400;line-height:1.05;color:var(--ink);margin-bottom:.5rem}
+.hh-h1{font-family:var(--serif);font-size:clamp(2.4rem,4vw,4.6rem);font-weight:400;line-height:1.05;color:var(--ink);margin-bottom:.5rem}
 .hh-h1 em{font-style:italic;color:var(--gold)}
-.hh-sub{font-family:var(--serif);font-size:clamp(.9rem,1.3vw,1.12rem);font-style:italic;font-weight:300;color:var(--muted);margin-bottom:1.4rem}
-.hh-body{font-size:.85rem;font-weight:300;line-height:2;color:var(--mid);max-width:400px;margin-bottom:2.2rem}
+.hh-sub{font-family:var(--serif);font-size:clamp(.9rem,1.3vw,1.12rem);font-style:italic;font-weight:300;color:var(--muted);margin-bottom:1.3rem}
+.hh-body{font-size:.85rem;font-weight:300;line-height:1.95;color:var(--mid);max-width:400px;margin-bottom:1.8rem}
 .hh-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+/* trust brag bar */
+.bragbar{display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:wrap;height:44px;background:var(--ink);padding:0 4vw}
+.brag{display:flex;align-items:center;gap:.45rem;font-size:.55rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap}
+.brag b{color:var(--gold);font-weight:600}
+.brag-sep{width:3px;height:3px;border-radius:50%;background:rgba(181,145,90,.5)}
 .home-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);background:var(--cream);height:76px}
 .hs{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.2rem;border-right:1px solid var(--border)}
 .hs:last-child{border-right:none}
 .hs-n{font-family:var(--serif);font-size:1.7rem;font-weight:400;color:var(--gold);line-height:1}
-.hs-l{font-size:.56rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.hs-l{font-size:.56rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-align:center}
 
 /* ── PAGE 2: PRODUCTS ── */
 #page-products{background:var(--white);display:flex;flex-direction:column}
-.prod-header{padding:2.8vh 5vw 2.2vh;border-bottom:1px solid var(--border);display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;flex-shrink:0}
+.prod-header{padding:2.6vh 5vw 2vh;border-bottom:1px solid var(--border);display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;flex-shrink:0}
 .ph-left .lbl{font-size:.59rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.55rem;margin-bottom:.6rem}
 .ph-left .lbl::before{content:'';width:14px;height:1px;background:var(--goldpale)}
 .ph-left h2{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:400;line-height:1.1;color:var(--ink)}
@@ -93,17 +110,17 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
 .ph-right{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
 .fb{padding:.3rem .8rem;font-size:.59rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);background:transparent;color:var(--mid);cursor:pointer;border-radius:2px;transition:all .2s;font-family:var(--sans)}
 .fb.on,.fb:hover{border-color:var(--gold);color:var(--gold);background:var(--goldlight)}
-.prod-body{flex:1;overflow-y:auto;padding:2.2vh 5vw 3vh}
+.prod-body{flex:1;overflow-y:auto;padding:2vh 5vw 3vh}
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
 .pc{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,0,.2,1),box-shadow .3s,border-color .3s}
 .pc:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(0,0,0,.09);border-color:var(--goldpale)}
-.pc-img{aspect-ratio:16/9;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pc-img{aspect-ratio:1/1;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .pc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,0,.2,1)}
 .pc:hover .pc-img img{transform:scale(1.05)}
 .pc-art{position:relative;z-index:1;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.18rem}
-.pca-k{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:rgba(14,13,11,.14);line-height:1}
-.pca-en{font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(14,13,11,.22)}
-.pca-s{font-family:var(--serif);font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1}
+.pca-k{font-family:var(--serif);font-size:1.6rem;font-weight:300;color:rgba(14,13,11,.16);line-height:1}
+.pca-en{font-size:.5rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(14,13,11,.24)}
+.pca-s{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--gold);line-height:1}
 .pc-badge{position:absolute;top:.65rem;left:.65rem;padding:.16rem .5rem;font-size:.52rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;z-index:3}
 .b-gold{background:var(--gold);color:#fff}.b-ink{background:var(--ink);color:#fff}.b-sage{background:#5d9070;color:#fff}.b-rose{background:#b87070;color:#fff}
 .pc-body{padding:1.1rem 1.3rem 1.4rem;flex:1;display:flex;flex-direction:column}
@@ -126,47 +143,48 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
 /* ── PAGE 3: ABOUT ── */
 #page-about{background:var(--white)}
 .about-layout{display:grid;grid-template-columns:1fr 1fr;min-height:100%}
-.ab-left{background:var(--cream);padding:5vh 4vw;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border);overflow-y:auto}
-.ab-right{padding:5vh 4vw;display:flex;flex-direction:column;justify-content:center;overflow-y:auto}
-.ab-img-wrap{position:relative;border-radius:var(--r2);overflow:hidden;aspect-ratio:4/3;background:#ede8e0;margin-bottom:1.8rem}
-.ab-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.ab-img-cap{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.5rem;background:linear-gradient(to top,rgba(14,13,11,.65),transparent)}
-.aic-l{font-size:.52rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
-.aic-n{font-family:var(--serif);font-size:.9rem;font-style:italic;color:#fff}
-.ab-quote{font-family:var(--serif);font-size:clamp(.95rem,1.4vw,1.22rem);font-style:italic;font-weight:300;color:var(--mid);line-height:1.7;padding-left:1.1rem;border-left:2px solid var(--goldpale);margin-bottom:1.6rem}
+.ab-left{background:var(--cream);padding:4vh 4vw;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border);overflow-y:auto}
+.ab-right{padding:4vh 4vw;display:flex;flex-direction:column;justify-content:center;overflow-y:auto}
+.ab-img-wrap{position:relative;border-radius:var(--r2);overflow:hidden;background:#fff;border:1px solid var(--border);margin-bottom:1.4rem}
+.ab-img-wrap img{width:100%;height:auto;display:block}
+.ab-report-cap{font-size:.56rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
+.ab-report-cap::before{content:'';width:14px;height:1px;background:var(--goldpale)}
 .an-panel{background:var(--ink);border-radius:var(--r2);padding:1.5rem 1.6rem}
 .an-title{font-size:.55rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
 .ac-bars{display:flex;flex-direction:column;gap:.75rem}
 .ac-row{display:flex;align-items:center;gap:.85rem}
-.ac-lbl{font-size:.58rem;color:rgba(255,255,255,.35);width:96px;flex-shrink:0;text-align:right}
+.ac-lbl{font-size:.58rem;color:rgba(255,255,255,.4);width:96px;flex-shrink:0;text-align:right}
 .ac-track{flex:1;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
 .ac-fill{height:100%;border-radius:2px;width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
 .f1{background:var(--gold)}.f2{background:#5d9070}.f3{background:#5d8fa8}.f4{background:rgba(181,145,90,.28)}
 .ac-val{font-family:var(--serif);font-size:.85rem;color:#fff;width:22px;flex-shrink:0}
 .ac-total{margin-top:1rem;padding-top:.9rem;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:baseline;gap:.35rem}
 .ac-tot-n{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--gold)}
-.ac-tot-s{font-size:.56rem;color:rgba(255,255,255,.22);letter-spacing:.08em;text-transform:uppercase}
+.ac-tot-s{font-size:.56rem;color:rgba(255,255,255,.3);letter-spacing:.08em;text-transform:uppercase}
 .lbl{font-size:.59rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.55rem;margin-bottom:.75rem}
 .lbl::before{content:'';width:14px;height:1px;background:var(--goldpale)}
 .h2{font-family:var(--serif);font-size:clamp(1.7rem,2.5vw,2.5rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:.95rem}
 .h2 em{font-style:italic;color:var(--gold)}
-.body-t{font-size:.84rem;font-weight:300;line-height:2;color:var(--mid)}
-.ab-features{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.8rem}
-.af{padding:.95rem 1rem;background:var(--cream);border-radius:var(--r);border:1px solid var(--border);transition:border-color .2s}
-.af:hover{border-color:var(--goldpale)}
-.af-t{font-size:.72rem;font-weight:500;color:var(--ink);margin-bottom:.2rem}
-.af-d{font-size:.68rem;font-weight:300;color:var(--mid);line-height:1.65}
-.ab-contact{margin-top:2rem;padding-top:1.8rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
+.body-t{font-size:.84rem;font-weight:300;line-height:1.95;color:var(--mid)}
+/* How We Score methodology */
+.method{margin-top:1.6rem;display:grid;gap:.6rem}
+.method-row{display:flex;gap:.85rem;align-items:flex-start;padding:.7rem .9rem;background:var(--cream);border:1px solid var(--border);border-radius:var(--r);transition:border-color .2s}
+.method-row:hover{border-color:var(--goldpale)}
+.method-ico{font-family:var(--serif);font-size:1.1rem;color:var(--gold);flex-shrink:0;width:20px;text-align:center}
+.method-t{font-size:.72rem;font-weight:500;color:var(--ink)}
+.method-d{font-size:.66rem;font-weight:300;color:var(--mid);line-height:1.55}
+.ab-contact{margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
 .ab-contact-lbl{font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.ab-footer{margin-top:1.5rem;font-size:.6rem;color:var(--muted);letter-spacing:.06em;line-height:1.8}
+.ab-footer{margin-top:1.4rem;font-size:.6rem;color:var(--muted);letter-spacing:.06em;line-height:1.8}
 
 /* RESPONSIVE */
 @media(max-width:960px){
   .home-hero,.about-layout{grid-template-columns:1fr}
-  .hh-right{height:48vw;min-height:260px}
+  .hh-right{height:88vw;min-height:340px;max-height:560px}
   .home-hero{height:auto}
   .home-stats{height:auto;padding:.8rem 0}
   .hs{padding:.8rem 0}
+  .bragbar{height:auto;padding:.7rem 4vw;gap:.8rem 1.2rem}
   .ab-left{border-right:none;border-bottom:1px solid var(--border)}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -174,21 +192,23 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
   :root{--nav:54px;--ticker:0px}
   .ticker-bar{display:none}
   .nav-tabs{display:none}
+  .nav-r .nav-ig{display:none}
   .nav-name{font-size:.85rem}
-  .pages{top:var(--nav)}
-  .prod-grid{grid-template-columns:1fr}
-  .ab-features{grid-template-columns:1fr}
+  .pages{top:var(--nav);bottom:56px}
+  .prod-grid{grid-template-columns:1fr 1fr}
   .home-stats{grid-template-columns:1fr 1fr}
   .hs:nth-child(2){border-right:none}
   .hs:nth-child(3){border-top:1px solid var(--border)}
-  .hh-h1{font-size:2.3rem}
+  .hh-h1{font-size:2.2rem}
+  .hh-right{height:96vw;max-height:520px}
   .mobile-btm{display:flex!important}
 }
-.mobile-btm{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--white);border-top:1px solid var(--border);justify-content:space-around;padding:.5rem 0}
-.mb-btn{display:flex;flex-direction:column;align-items:center;gap:.15rem;border:none;background:transparent;cursor:pointer;padding:.3rem .8rem;font-family:var(--sans)}
-.mb-i{font-size:1rem;line-height:1}
+.mobile-btm{display:none;position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--white);border-top:1px solid var(--border);justify-content:space-around;padding:.45rem 0;height:56px}
+.mb-btn{display:flex;flex-direction:column;align-items:center;gap:.15rem;border:none;background:transparent;cursor:pointer;padding:.3rem .8rem;font-family:var(--sans);text-decoration:none}
+.mb-i{font-size:1rem;line-height:1;color:var(--ink)}
 .mb-l{font-size:.5rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .2s}
 .mb-btn.active .mb-l{color:var(--gold)}
+.mb-shop .mb-i,.mb-shop .mb-l{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -216,7 +236,7 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-brand" onclick="showPage('home');return false">
-    <img class="nav-logo" src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/logo.jpeg" alt="HanGlanz" onerror="this.style.display='none'"/>
+    <img class="nav-logo" src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/HanGlanz_LOGO.jpeg" alt="HanGlanz" onerror="this.style.display='none'"/>
     <span class="nav-name">HanGlanz Global</span>
   </a>
   <ul class="nav-tabs">
@@ -225,8 +245,8 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
     <li><button class="nav-tab" onclick="showPage('about')">About &amp; Contact</button></li>
   </ul>
   <div class="nav-r">
-    <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="nav-ig">@hanglanzglobal</a>
-    <a href="https://eu.atomy.com" target="_blank" class="nav-cta">Shop Atomy EU</a>
+    <a href="https://www.instagram.com/hanglanzglobal" target="_blank" rel="noopener" class="nav-ig">@hanglanzglobal</a>
+    <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="nav-cta">Shop</a>
   </div>
 </nav>
 
@@ -240,20 +260,30 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
         <p class="hh-eye">K-Beauty Ingredient Intelligence · DACH Region</p>
         <h1 class="hh-h1">Where Korean beauty<br>finds its <em>Glanz.</em></h1>
         <p class="hh-sub">Science-backed analysis. Transparent scores.</p>
-        <p class="hh-body">HanGlanz decodes Korean skincare and wellness for German-speaking Europe — with independent ingredient scoring, INCI transparency checks, and verified Atomy product benchmarks.</p>
+        <p class="hh-body">HanGlanz independently benchmarks Korean skincare and wellness for German-speaking Europe — decoding ingredient lists into clear scores you can trust before you buy.</p>
         <div class="hh-btns">
           <a href="#" class="btn-dark" onclick="showPage('products');return false">Explore Products</a>
-          <a href="#" class="btn-line" onclick="showPage('about');return false">Our Method</a>
+          <a href="#" class="btn-line" onclick="showPage('about');return false">How We Score</a>
         </div>
       </div>
       <div class="hh-right">
-        <img class="hh-right-img" src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/Screenshot%202026-01-28%20at%2016.15.27.png" alt="HanGlanz Benchmark Approved"/>
+        <video class="hh-right-media" autoplay muted loop playsinline
+               poster="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/Screenshot%202026-01-28%20at%2014.53.53.png">
+          <source src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/video-hanglanz.mp4" type="video/mp4"/>
+        </video>
         <div class="hh-badge">
           <div class="hb-lbl">HanGlanz Benchmark Approved™</div>
           <div class="hb-score">94</div>
           <div class="hb-sub">Absolute CellActive · Overall Score</div>
         </div>
       </div>
+    </div>
+    <!-- Trust brag bar -->
+    <div class="bragbar">
+      <span class="brag"><b>✦</b> Dermatest® Excellent</span><span class="brag-sep"></span>
+      <span class="brag"><b>✦</b> KRIBB Patented Actives</span><span class="brag-sep"></span>
+      <span class="brag"><b>✦</b> EU-Compliant Formulas</span><span class="brag-sep"></span>
+      <span class="brag"><b>✦</b> Benchmark Approved™ ≥ 80</span>
     </div>
     <div class="home-stats">
       <div class="hs"><div class="hs-n">21</div><div class="hs-l">Analysed Products</div></div>
@@ -268,22 +298,23 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
     <div class="prod-header">
       <div class="ph-left">
         <p class="lbl">Featured Products</p>
-        <h2 class="h2" style="font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:400;line-height:1.1;color:var(--ink)">Analysed Atomy Products with <em style="font-style:italic;color:var(--gold)">Benchmark Score</em></h2>
+        <h2>Analysed Atomy Products with <em>Benchmark Score</em></h2>
       </div>
       <div class="ph-right">
         <button class="fb on" onclick="filterProd('all',this)">All</button>
         <button class="fb" onclick="filterProd('skincare',this)">Skincare</button>
         <button class="fb" onclick="filterProd('supplement',this)">Supplements</button>
         <button class="fb" onclick="filterProd('body',this)">Body &amp; Hair</button>
-        <a href="https://eu.atomy.com" target="_blank" class="btn-line" style="font-size:.59rem;padding:.3rem .85rem">All 21 on Atomy EU →</a>
+        <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="btn-line" style="font-size:.59rem;padding:.3rem .85rem">Shop all →</a>
       </div>
     </div>
     <div class="prod-body">
       <div class="prod-grid">
 
+        <!-- 1 · CellActive Set — no true product photo in repo: branded panel (replace when you upload a real Set image) -->
         <div class="pc" data-cat="skincare">
           <div class="pc-img" style="background:linear-gradient(135deg,#f5ead8,#e8d5b8)">
-            <img src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/Atomy_Product.png" alt="Absolute CellActive"/>
+            <div class="pc-art"><span class="pca-k">셀액티브</span><span class="pca-en">CellActive</span><div style="width:24px;height:1px;background:var(--gold);margin:.2rem 0"></div><span class="pca-s">94</span></div>
             <div class="pc-badge b-gold">Top Rated</div>
           </div>
           <div class="pc-body">
@@ -297,14 +328,15 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
             </div>
             <div class="pc-foot">
               <div class="pc-tot"><span class="pc-tot-n">94</span><span class="pc-tot-m">/100</span></div>
-              <a href="https://eu.atomy.com/product/700207" target="_blank" class="pc-link">Atomy EU →</a>
+              <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="pc-link">Shop →</a>
             </div>
           </div>
         </div>
 
+        <!-- 2 · Face Mask -->
         <div class="pc" data-cat="skincare">
           <div class="pc-img" style="background:linear-gradient(135deg,#eaf2e6,#d0e4c8)">
-            <img src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/atomy-facemask-01.png" alt="CellActive Face Mask"/>
+            <img loading="lazy" src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/atomy-facemask-01.png" alt="CellActive Face Mask" onerror="this.style.display='none'"/>
             <div class="pc-badge b-ink">Benchmark Approved</div>
           </div>
           <div class="pc-body">
@@ -318,20 +350,21 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
             </div>
             <div class="pc-foot">
               <div class="pc-tot"><span class="pc-tot-n">90</span><span class="pc-tot-m">/100</span></div>
-              <a href="https://eu.atomy.com/product/700207" target="_blank" class="pc-link">Atomy EU →</a>
+              <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="pc-link">Shop →</a>
             </div>
           </div>
         </div>
 
+        <!-- 3 · Sunscreen (real product photo) -->
         <div class="pc" data-cat="skincare">
           <div class="pc-img" style="background:linear-gradient(135deg,#fdf4dc,#f5e0a8)">
-            <img src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/product-comparioson-suncream.png" alt="Fresh Sun SPF50+"/>
+            <img loading="lazy" src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/Screenshot%202026-01-28%20at%2014.53.53.png" alt="Atomy Absolute Essence Sunscreen SPF50+" style="object-fit:contain;padding:8%" onerror="this.style.display='none'"/>
             <div class="pc-badge b-ink">Benchmark Approved</div>
           </div>
           <div class="pc-body">
-            <p class="pc-cat">Sun Protection · Mineral UV</p>
-            <h3 class="pc-name">Fresh Sun Lotion SPF50+ PA++++</h3>
-            <p class="pc-ingr"><strong>Key actives:</strong> Zinc Oxide · Niacinamide · Centella Asiatica · Bisabolol — EU-compliant, no oxybenzone</p>
+            <p class="pc-cat">Sun Protection · Essence UV</p>
+            <h3 class="pc-name">Absolute Essence Sunscreen SPF50+</h3>
+            <p class="pc-ingr"><strong>Key actives:</strong> Niacinamide · Centella Asiatica · Bisabolol — EU-compliant filters, no oxybenzone</p>
             <div class="pc-scores">
               <div class="ps"><div class="ps-v">88</div><div class="ps-k">Barrier</div></div>
               <div class="ps"><div class="ps-v">93</div><div class="ps-k">INCI</div></div>
@@ -339,20 +372,21 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
             </div>
             <div class="pc-foot">
               <div class="pc-tot"><span class="pc-tot-n">92</span><span class="pc-tot-m">/100</span></div>
-              <a href="https://eu.atomy.com/product/700133" target="_blank" class="pc-link">Atomy EU →</a>
+              <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="pc-link">Shop →</a>
             </div>
           </div>
         </div>
 
+        <!-- 4 · CellActive Cream (real photo) -->
         <div class="pc" data-cat="skincare">
           <div class="pc-img" style="background:linear-gradient(135deg,#faf4e4,#f0e8cc)">
-            <img src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/atomy-cream.jpeg" alt="Absolute CellActive Cream" onerror="this.style.display='none'"/>
+            <img loading="lazy" src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/atomy-cream.jpeg" alt="Absolute CellActive Cream" onerror="this.style.display='none'"/>
             <div class="pc-badge b-ink">Benchmark Approved</div>
           </div>
           <div class="pc-body">
             <p class="pc-cat">Anti-Aging · Cream</p>
             <h3 class="pc-name">Absolute CellActive Cream</h3>
-            <p class="pc-ingr"><strong>Key actives:</strong> Ceramide Lipid Complex · Cell Communication Peptide · Barrier Lipid Support</p>
+            <p class="pc-ingr"><strong>Key actives:</strong> Ceramide Lipid Complex · Cell-Communication Peptide · Barrier Lipid Support</p>
             <div class="pc-scores">
               <div class="ps"><div class="ps-v">94</div><div class="ps-k">Barrier</div></div>
               <div class="ps"><div class="ps-v">91</div><div class="ps-k">INCI</div></div>
@@ -360,14 +394,15 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
             </div>
             <div class="pc-foot">
               <div class="pc-tot"><span class="pc-tot-n">93</span><span class="pc-tot-m">/100</span></div>
-              <a href="https://eu.atomy.com/product/700207" target="_blank" class="pc-link">Atomy EU →</a>
+              <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="pc-link">Shop →</a>
             </div>
           </div>
         </div>
 
+        <!-- 5 · HemoHIM (branded panel — no photo) -->
         <div class="pc" data-cat="supplement">
           <div class="pc-img" style="background:linear-gradient(135deg,#eaf2e6,#d0e4c8)">
-            <div class="pc-art"><span class="pca-k">헤모힘</span><span class="pca-en">HemoHIM</span><div style="width:22px;height:1px;background:#5d9070;margin:.18rem 0"></div><span class="pca-s" style="color:#5d9070">94</span></div>
+            <div class="pc-art"><span class="pca-k">헤모힘</span><span class="pca-en">HemoHIM</span><div style="width:24px;height:1px;background:#5d9070;margin:.2rem 0"></div><span class="pca-s" style="color:#5d9070">94</span></div>
             <div class="pc-badge b-sage">#1 Bestseller</div>
           </div>
           <div class="pc-body">
@@ -381,14 +416,15 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
             </div>
             <div class="pc-foot">
               <div class="pc-tot"><span class="pc-tot-n">94</span><span class="pc-tot-m">/100</span></div>
-              <a href="https://eu.atomy.com/product/790101" target="_blank" class="pc-link">Atomy EU →</a>
+              <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="pc-link">Shop →</a>
             </div>
           </div>
         </div>
 
+        <!-- 6 · Shampoo (real photo, heavy file — lazy loaded) -->
         <div class="pc" data-cat="body">
           <div class="pc-img" style="background:linear-gradient(135deg,#f0eaf8,#e0d4f0)">
-            <img src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/atomy%20shampoo.png" alt="Protein Intensive Shampoo"/>
+            <img loading="lazy" src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/atomy%20shampoo.png" alt="Protein Intensive Shampoo" onerror="this.style.display='none'"/>
             <div class="pc-badge b-ink">Benchmark Approved</div>
           </div>
           <div class="pc-body">
@@ -402,14 +438,36 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
             </div>
             <div class="pc-foot">
               <div class="pc-tot"><span class="pc-tot-n">88</span><span class="pc-tot-m">/100</span></div>
-              <a href="https://eu.atomy.com/product/700666" target="_blank" class="pc-link">Atomy EU →</a>
+              <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="pc-link">Shop →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 · AIDAM Body Cleanser (uses the real Atomy_Product.png photo) -->
+        <div class="pc" data-cat="body">
+          <div class="pc-img" style="background:linear-gradient(135deg,#eaf2e6,#dcebd4)">
+            <img loading="lazy" src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/Atomy_Product.png" alt="Atomy AIDAM Body Cleanser" onerror="this.style.display='none'"/>
+            <div class="pc-badge b-sage">Body Care</div>
+          </div>
+          <div class="pc-body">
+            <p class="pc-cat">Body Care · Cleanser</p>
+            <h3 class="pc-name">AIDAM Body Cleanser</h3>
+            <p class="pc-ingr"><strong>Key actives:</strong> 7-Herb Botanical Complex · Mild Amino-Acid Surfactants — pH-balanced, gentle</p>
+            <div class="pc-scores">
+              <div class="ps"><div class="ps-v">86</div><div class="ps-k">Barrier</div></div>
+              <div class="ps"><div class="ps-v">89</div><div class="ps-k">INCI</div></div>
+              <div class="ps"><div class="ps-v">90</div><div class="ps-k">Clean</div></div>
+            </div>
+            <div class="pc-foot">
+              <div class="pc-tot"><span class="pc-tot-n">88</span><span class="pc-tot-m">/100</span></div>
+              <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="pc-link">Shop →</a>
             </div>
           </div>
         </div>
 
       </div>
       <div class="prod-more">
-        <a href="https://eu.atomy.com" target="_blank" class="btn-line">View All 21 Analysed Products on Atomy EU →</a>
+        <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="btn-line">View all 21 analysed products in the HanGlanz shop →</a>
       </div>
     </div>
   </div>
@@ -418,14 +476,10 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
   <div id="page-about" class="page">
     <div class="about-layout">
       <div class="ab-left">
+        <p class="ab-report-cap">Benchmark Report · Sample</p>
         <div class="ab-img-wrap">
-          <img src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/Screenshot%202026-01-28%20at%2016.15.27.png" alt="HanGlanz Brand"/>
-          <div class="ab-img-cap">
-            <div class="aic-l">HanGlanz Global</div>
-            <div class="aic-n">Düsseldorf · K-Beauty Intelligence</div>
-          </div>
+          <img loading="lazy" src="https://raw.githubusercontent.com/dabar115/HanGlanz.github.io/main/images/topkoreansuncream-product-comparision.png" alt="HanGlanz — Top Korean Sunscreens Compared"/>
         </div>
-        <blockquote class="ab-quote">"Every formulation tells a story. For the first time, that story becomes measurable."</blockquote>
         <div class="an-panel">
           <div class="an-title">Live Analysis · Absolute CellActive Set</div>
           <div class="ac-bars">
@@ -440,23 +494,22 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
       <div class="ab-right">
         <p class="lbl">Who We Are</p>
         <h2 class="h2">Ingredient clarity.<br><em>Korean precision.</em></h2>
-        <p class="body-t">HanGlanz Global brings the transparency of Korea's leading beauty intelligence platforms to the DACH market — translating complex ingredient lists into clear, actionable benchmark scores.</p>
-        <br/>
-        <p class="body-t">Based in Düsseldorf, we independently benchmark Atomy products, track emerging K-beauty trends, and educate German-speaking consumers who deserve more than marketing claims.</p>
-        <div class="ab-features">
-          <div class="af"><div class="af-t">0–100 Ingredient Scoring</div><div class="af-d">Science-backed, modelled on Korea's leading intelligence platforms.</div></div>
-          <div class="af"><div class="af-t">DACH-First Approach</div><div class="af-d">A market deeply underserved by K-beauty data tools.</div></div>
-          <div class="af"><div class="af-t">Benchmark Certification</div><div class="af-d">Products ≥ 80 receive HanGlanz Benchmark Approved™ seal.</div></div>
-          <div class="af"><div class="af-t">Trend Intelligence</div><div class="af-d">We monitor Korea before it arrives on European shelves.</div></div>
+        <p class="body-t">HanGlanz Global brings the transparency of Korea's leading beauty-intelligence platforms to the DACH market — translating complex ingredient lists into clear, independent benchmark scores. We benchmark every brand on the same scale, so the verdict is yours to trust.</p>
+        <!-- How We Score -->
+        <div class="method">
+          <div class="method-row"><span class="method-ico">①</span><div><div class="method-t">Skin Barrier</div><div class="method-d">How well the formula supports and repairs the skin's protective barrier.</div></div></div>
+          <div class="method-row"><span class="method-ico">②</span><div><div class="method-t">INCI Transparency</div><div class="method-d">Full ingredient disclosure, clarity of actives, and absence of hidden fillers.</div></div></div>
+          <div class="method-row"><span class="method-ico">③</span><div><div class="method-t">Clean Beauty</div><div class="method-d">Free from common irritants; EU-compliant, fragrance/paraben scrutiny.</div></div></div>
         </div>
+        <p class="body-t" style="margin-top:1rem">Products scoring <strong>80 or above</strong> earn the HanGlanz Benchmark Approved™ seal. Based in Düsseldorf, serving German-speaking Europe.</p>
         <div class="ab-contact">
           <span class="ab-contact-lbl">Connect</span>
           <a href="mailto:hanglanzglobal@gmail.com" class="btn-gold">Email Us</a>
-          <a href="https://www.instagram.com/hanglanzglobal" target="_blank" class="btn-line">@hanglanzglobal</a>
-          <a href="https://eu.atomy.com" target="_blank" class="btn-dark">Shop Atomy EU</a>
+          <a href="https://www.instagram.com/hanglanzglobal" target="_blank" rel="noopener" class="btn-line">@hanglanzglobal</a>
+          <a href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener" class="btn-dark">Shop</a>
         </div>
         <div class="ab-footer">
-          © 2026 HanGlanz Global &nbsp;·&nbsp; Friedrichstraße 121, Düsseldorf, Germany<br>
+          © 2026 HanGlanz Global &nbsp;·&nbsp; Friedrichstraße 121, 40217 Düsseldorf, Germany<br>
           hanglanzglobal@gmail.com &nbsp;·&nbsp; instagram.com/hanglanzglobal
         </div>
       </div>
@@ -465,11 +518,12 @@ nav{position:fixed;top:var(--ticker);left:0;right:0;z-index:900;height:var(--nav
 
 </div>
 
-<!-- Mobile bottom bar -->
+<!-- Mobile bottom bar (Shop added for persistent conversion) -->
 <div class="mobile-btm">
   <button class="mb-btn active" onclick="showPage('home')"><span class="mb-i">⌂</span><span class="mb-l">Home</span></button>
   <button class="mb-btn" onclick="showPage('products')"><span class="mb-i">✦</span><span class="mb-l">Products</span></button>
   <button class="mb-btn" onclick="showPage('about')"><span class="mb-i">◎</span><span class="mb-l">About</span></button>
+  <a class="mb-btn mb-shop" href="https://tinyurl.com/HanGlanzGlobal" target="_blank" rel="noopener"><span class="mb-i">◈</span><span class="mb-l">Shop</span></a>
 </div>
 
 <script>
@@ -479,7 +533,8 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   document.querySelectorAll('.nav-tab').forEach((t,i) => t.classList.toggle('active', i === PAGE_MAP[id]));
-  document.querySelectorAll('.mb-btn').forEach((t,i) => t.classList.toggle('active', i === PAGE_MAP[id]));
+  document.querySelectorAll('.mobile-btm .mb-btn').forEach((t,i) => { if(i < 3) t.classList.toggle('active', i === PAGE_MAP[id]); });
+  document.querySelectorAll('.page').forEach(p => p.scrollTop = 0);
   if (id === 'about') triggerBars();
 }
 
@@ -497,12 +552,6 @@ function filterProd(cat, btn) {
     c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'flex' : 'none';
   });
 }
-
-function checkMobile() {
-  document.querySelector('.mobile-btm').style.display = window.innerWidth <= 640 ? 'flex' : 'none';
-}
-checkMobile();
-window.addEventListener('resize', checkMobile);
 </script>
 </body>
 </html>
